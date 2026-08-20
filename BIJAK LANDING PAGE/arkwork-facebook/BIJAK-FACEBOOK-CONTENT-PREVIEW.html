@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIJAK ARKWORK — Facebook Content Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2B4B;
+    --gold: #C9A84C;
+    --teal: #0EA5A0;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --mid-gray: #888;
+    --text: #1a1a2e;
+    --border: #e0e0e0;
+    --facebook-blue: #1877F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light-gray);
+    color: var(--text);
+    padding: 40px 20px;
+  }
+
+  /* HEADER */
+  .header {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .header-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--navy);
+    letter-spacing: -1px;
+  }
+
+  .header-logo span {
+    color: var(--teal);
+  }
+
+  .header-sub {
+    color: var(--mid-gray);
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin: 20px 0 10px;
+  }
+
+  .header p {
+    color: var(--mid-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* NAV TABS */
+  .nav-tabs {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .nav-tab {
+    padding: 8px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--mid-gray);
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-tab:hover, .nav-tab.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* PAGE WRAPPER */
+  .page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: block;
+  }
+
+  /* FACEBOOK CARD */
+  .fb-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  /* Card Header */
+  .fb-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .fb-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .fb-page-info {
+    flex: 1;
+  }
+
+  .fb-page-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy);
+  }
+
+  .fb-page-meta {
+    font-size: 0.75rem;
+    color: var(--mid-gray);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .fb-page-meta .dot {
+    width: 3px;
+    height: 3px;
+    background: var(--mid-gray);
+    border-radius: 50%;
+  }
+
+  .fb-follow-btn {
+    padding: 5px 14px;
+    background: var(--facebook-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Card Content */
+  .fb-card-content {
+    padding: 14px 16px;
+  }
+
+  .fb-post-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text);
+    white-space: pre-line;
+  }
+
+  .fb-post-text .emoji {
+    font-size: 1.1rem;
+  }
+
+  .fb-post-text strong {
+    color: var(--navy);
+  }
+
+  /* Hashtags */
+  .fb-hashtags {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  /* Card Footer */
+  .fb-card-footer {
+    padding: 8px 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 0;
+  }
+
+  .fb-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mid-gray);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .fb-action-btn:hover {
+    background: var(--light-gray);
+  }
+
+  .fb-action-btn .icon {
+    font-size: 1.1rem;
+  }
+
+  /* COMMENT CTA */
+  .comment-cta {
+    margin: 10px 0 0;
+    padding: 10px 14px;
+    background: rgba(27, 43, 75, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .comment-cta-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .comment-cta-hint {
+    font-size: 0.78rem;
+    color: var(--mid-gray);
+    margin-top: 2px;
+  }
+
+  /* SEPARATOR */
+  .section-divider {
+    max-width: 900px;
+    margin: 40px auto 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-divider h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .section-divider .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* BANNER POST */
+  .banner-post {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .banner-post .tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .banner-post h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .banner-post p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  .footer {
+    max-width: 900px;
+    margin: 60px auto 0;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--mid-gray);
+    font-size: 0.8rem;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.8rem; }
+    .fb-action-btn span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-logo">BIJAK<span>-</span>ADVISORY</div>
+  <div class="header-sub">Facebook Content Preview — ARKWORK Package</div>
+  <h1>🏴 Social Media Content</h1>
+  <p>30 ready-to-post Facebook posts with BIJAK brand voice. See how they look in your brand colors — navy, gold, teal.</p>
+</div>
+
+<!-- NAV TABS -->
+<div class="nav-tabs">
+  <a class="nav-tab active" onclick="showPage('posts')">📋 All 30 Posts</a>
+  <a class="nav-tab" onclick="showPage('checklists')">📝 Checklists</a>
+  <a class="nav-tab" onclick="showPage('about')">ℹ️ About Section</a>
+</div>
+
+<!-- PAGES WRAPPER -->
+<div class="page-wrapper">
+
+<!-- PAGE 1: ALL POSTS -->
+<div class="page active" id="page-posts">
+
+  <!-- SECTION: SSM REGISTRATION -->
+  <div class="section-divider"><h2>Block 1 — SSM Registration</h2><div class="line"></div></div>
+
+  <!-- POST 1 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta">
+          <span>Just now</span><span class="dot"></span><span>🌐</span>
+        </div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">🔴</span> SSM told you "Form Incomplete"? You submitted everything.
+
+The 3 documents Malaysian entrepreneurs keep getting wrong — and how to fix them in one sitting.
+
+Comment <strong>"FORMULA"</strong> and we send you the checklist. 👇</div>
+      <div class="comment-cta">
+        <div class="comment-cta-text">💬 Comment "FORMULA" for the checklist →</div>
+        <div class="comment-cta-hint">Or DM us. We reply within the hour.</div>
+      </div>
+      <div class="fb-hashtags">#SSM #CompanyRegistrationMalaysia #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 2 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>2h ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">⏱️</span> "Your SSM registration is under processing."
+
+That email means NOTHING. Here's the real timeline — and the exact step where applications get stuck for weeks.
+
+Share this before you register.</div>
+      <div class="fb-hashtags">#SSMMalaysia #CompanySetup #SdnBhd #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 3 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>4h ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">📱</span> You tried to register on MyCoID. Screen froze. Now what?
+
+Step-by-step screenshot guide → Link in bio.
+
+No jargon. No phone calls. Just working steps.</div>
+      <div class="fb-hashtags">#MyCoID #SSM #MalaysiaBusiness #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 4 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>6h ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">❌</span> SSM accepted your application. But your MIDA license was rejected.
+
+Why? Wrong SSM activity code.
+
+This one mistake costs entrepreneurs 3-6 months and RM1,000+ in re-filings.</div>
+      <div class="fb-hashtags">#SSM #MalaysiaBusiness #BusinessSetup #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 5 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>1d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">🚫</span> "Your company name has been rejected."
+
+SSM rejected 47,000+ name applications in 2023 alone.
+
+The naming rules they don't tell you — until it's too late.</div>
+      <div class="fb-hashtags">#SSM #CompanyName #MalaysiaBusiness #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 9 — BANNER: HIDDEN COSTS -->
+  <div class="banner-post">
+    <div class="tag">HIDDEN COSTS</div>
+    <h3>The conversations Malaysian businessmen are having in private WhatsApp groups.</h3>
+    <p>"Quoted RM900. Invoice came RM2,800."</p>
+  </div>
+
+  <!-- POST 9 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>2d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">💰</span> Agent quoted you RM900 all-in.
+Invoice came: RM2,800.
+"Suruhanjaya fee adalah berasingan."
+
+Ask for the FULL breakdown before you sign. We give it upfront.</div>
+      <div class="fb-hashtags">#CompanyRegistration #HiddenCosts #SSM #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 15 — BANNER: FOREIGN -->
+  <div class="banner-post" style="background: var(--teal);">
+    <div class="tag" style="background: var(--gold); color: var(--navy);">FOREIGN INVESTORS</div>
+    <h3>🇨🇳 🇸🇬 🇭🇰 🇦🇪 The questions we get every week from foreign investors.</h3>
+    <p>"Can I own 100%? What visa do I need? How long until I can operate legally?"</p>
+  </div>
+
+  <!-- POST 15 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>3d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">🌏</span> "Can I fully own a company in Malaysia as a foreigner?"
+
+Short answer: Yes — in most industries. But not all.
+
+Malaysia's 2022 New Investment Policy changed the rules. Here's what applies to your sector.
+
+Comment <strong>"FOREIGN"</strong> → your sector, we tell you the rule.</div>
+      <div class="comment-cta">
+        <div class="comment-cta-text">🌏 Comment your industry → Foreign ownership rule for your sector</div>
+        <div class="comment-cta-hint">DM works too. No cost. Just answers.</div>
+      </div>
+      <div class="fb-hashtags">#ForeignOwnership #MalaysiaBusiness #Investment #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 19 — BANNER: AUTHORITY -->
+  <div class="banner-post" style="background: linear-gradient(135deg, #1B2B4B, #0F2044);">
+    <div class="tag" style="background: var(--teal); color: white;">TRUSTED SINCE 2007</div>
+    <h3>Why 300+ Malaysian companies chose BIJAK over the cheapest quote.</h3>
+    <p>Not because we're the cheapest. Because we're the clearest.</p>
+  </div>
+
+  <!-- POST 19 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>4d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">⭐</span> 18 years serving Malaysian businesses.
+12 years in accounting and compliance.
+300+ companies registered and still standing.
+
+We don't just register your company. We keep it compliant.</div>
+      <div class="fb-hashtags">#BijakAdvisory #18Years #MalaysiaBusiness #TrustedAdvisors</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 26 — BANNER: ENGAGEMENT -->
+  <div class="banner-post" style="background: var(--gold); color: var(--navy);">
+    <div class="tag" style="background: var(--navy); color: white;">MYTH BUSTER</div>
+    <h3>Saturday Myth-Busting Series.</h3>
+    <p>One common misconception. The actual rule. Every week.</p>
+  </div>
+
+  <!-- POST 26 -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>5d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">❌</span> MYTH: "I don't need a company secretary unless I'm a big company."
+
+✅ FACT: Every Sdn Bhd in Malaysia is legally required to appoint a company secretary — from day 1.
+
+An unqualified secretary = your company is non-compliant from the start.
+
+Ask us to verify your current status. Free.</div>
+      <div class="fb-hashtags">#CompanySecretary #SSM #Compliance #BijakAdvisory</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <!-- POST 30 — SOFT CLOSE -->
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>6d ago</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+      <button class="fb-follow-btn">Follow</button>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><span class="emoji">🏴</span> You've been thinking about it for 6 months.
+
+The market won't wait. Competitors are registering now.
+
+One conversation with us will tell you exactly where you stand.
+
+Free. Honest. No pressure.</div>
+      <div class="comment-cta">
+        <div class="comment-cta-text">📋 Free 30-min consultation — book via bijaadvisory.com</div>
+        <div class="comment-cta-hint">Or WhatsApp us directly. We reply within the hour.</div>
+      </div>
+      <div class="fb-hashtags">#BijakAdvisory #MalaysiaBusiness #TakeAction #CompanySetup</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- PAGE 2: CHECKLISTS -->
+<div class="page" id="page-checklists">
+  <div class="section-divider"><h2>📝 Lead Magnet Checklists</h2><div class="line"></div></div>
+
+  <div class="fb-card">
+    <div class="fb-card-header">
+      <div class="fb-avatar">B</div>
+      <div class="fb-page-info">
+        <div class="fb-page-name">BIJAK ADVISORY</div>
+        <div class="fb-page-meta"><span>Pinned</span><span class="dot"></span><span>🌐</span></div>
+      </div>
+    </div>
+    <div class="fb-card-content">
+      <div class="fb-post-text"><strong>📋 FREE CHECKLISTS — Comment any keyword to get it:</strong>
+
+💬 <strong>"FORMULA"</strong> → 3 Documents SSM Keeps Rejecting
+💬 <strong>"SDNBD"</strong> → Sdn Bhd Registration Must-Haves
+💬 <strong>"FOREIGN"</strong> → Foreign Investor Setup Checklist
+💬 <strong>"CALENDAR"</strong> → Annual Compliance Calendar
+💬 <strong>"COST"</strong> → Full Cost Breakdown
+💬 <strong>"MYCOID"</strong> → MyCoID Step-by-Step
+💬 <strong>"VISA"</strong> → Employment Pass vs Business Visa
+💬 <strong>"QUESTIONS"</strong> → 10 Questions to Ask Before You Register
+
+We reply within the hour. No sales pitch — just your checklist.</div>
+      <div class="fb-hashtags">#SSM #CompanyRegistrationMalaysia #BijakAdvisory #Checklist</div>
+    </div>
+    <div class="fb-card-footer">
+      <button class="fb-action-btn"><span class="icon">👍</span> Like</button>
+      <button class="fb-action-btn"><span class="icon">💬</span> Comment</button>
+      <button class="fb-action-btn"><span class="icon">↗️</span> Share</button>
+    </div>
+  </div>
+
+  <div class="fb-card" style="background: rgba(201,168,76,0.05); border-left: 4px solid var(--gold);">
+    <div class="fb-card-content">
+      <div class="fb-post-text" style="font-size: 0.85rem; line-height: 1.7;">
+        <strong style="color: var(--navy);">💡 How the comment-gate system works:</strong><br><br>
+        1. Post the above as a pinned post on your page<br>
+        2. When someone comments a keyword → you (or your team) reply with the PDF checklist<br>
+        3. This builds your messenger list AND drives engagement signals to Facebook's algorithm<br>
+        4. Algorithm sees high comment rate → shows your content to MORE people<br>
+        5. Repeat every week or two with new keywords<br><br>
+        <strong style="color: var(--teal);">Result: Free leads + algorithm boost = organic page growth</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: ABOUT SECTION -->
+<div class="page" id="page-about">
+  <div class="section-divider"><h2>ℹ️ Facebook Page — About Section</h2><div class="line"></div></div>
+
+  <div class="fb-card">
+    <div class="fb-card-content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 1px; margin-bottom: 6px;">SHORT DESCRIPTION</div>
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.5; padding: 12px; background: var(--light-gray); border-radius: 8px;">
+            Company secretarial & business setup. SSM registration, compliance, fixed fees. No surprises.
+          </div>
+          <div style="font-size: 0.75rem; color: var(--mid-gray); margin-top: 6px;">101 characters — used in Facebook search results</div>
+        </div>
+        <div>
+          <div style="font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 1px; margin-bottom: 6px;">MISSION</div>
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.5; padding: 12px; background: var(--light-gray); border-radius: 8px;">
+            Helping Malaysian entrepreneurs build compliant businesses — with honest advice, transparent pricing, and 18 years of experience.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <div style="font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 1px; margin-bottom: 6px;">FULL ABOUT</div>
+        <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6; padding: 16px; background: var(--light-gray); border-radius: 8px; white-space: pre-line;">🏴 BIJAK ADVISORY — Responsible Solutions. Customer Satisfaction. Always.
+
+We help Malaysian entrepreneurs register companies, stay compliant, and grow without compliance surprises.
+
+What we do:
+• SSM company registration (Sdn Bhd, Sole Prop, LLP)
+• Annual secretarial & compliance
+• MIDA licensing
+• Corporate secretarial services
+• Accounting & audit coordination
+
+Why BIJAK:
+• 18 years in finance & compliance
+• 12 years in accounting
+• 300+ companies served
+• Fixed-fee pricing — no surprises
+• Direct access to your account manager
+
+No call centres. No ticket systems. Just answers.
+
+📍 Malaysia
+📞 WhatsApp: [Your Number]
+🌐 bijaadvisory.com</div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <div style="font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 1px; margin-bottom: 6px;">PAGE CATEGORIES (select all that apply)</div>
+        <div style="font-size: 0.85rem; color: var(--text); padding: 12px; background: var(--light-gray); border-radius: 8px; line-height: 2;">
+          ☑️ Local Business<br>
+          ☑️ Company & Business Services<br>
+          ☑️ Consulting Agency<br>
+          ☑️ Legal Services<br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end page-wrapper -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="footer-brand">BIJAK ADVISORY</span> — ARKWORK Social Media Package<br>
+  <span style="color: var(--teal);">bijaadvisory.com</span> | Files: 01-06 in arkwork-facebook folder
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>

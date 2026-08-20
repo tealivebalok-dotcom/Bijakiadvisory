@@ -1,0 +1,59 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="100%" style="stop-color:#1a3a6e"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#0EA5A0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bgGrad)" rx="0"/>
+
+  <!-- Subtle circle accent top right -->
+  <circle cx="520" cy="80" r="180" fill="#0EA5A0" opacity="0.06"/>
+  <circle cx="80" cy="520" r="140" fill="#C9A84C" opacity="0.06"/>
+
+  <!-- Wave Brand Mark -->
+  <g transform="translate(170, 140)">
+    <!-- Wave path -->
+    <path d="M0 100 L0 0 Q0 -15 13 -15 L63 -15 Q93 -15 93 20 Q93 48 68 52 L63 53 Q93 57 93 84 Q93 115 63 115 L13 115"
+          fill="none" stroke="url(#waveGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Gold accent arrow -->
+    <path d="M93 84 L115 68 L103 90"
+          fill="none" stroke="#C9A84C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Company Name -->
+  <text x="300" y="340" text-anchor="middle"
+        font-family="'Playfair Display', Georgia, serif"
+        font-size="62" font-weight="700"
+        fill="#FFFFFF" letter-spacing="10">BIJAK I</text>
+
+  <!-- ADVISORY -->
+  <text x="300" y="385" text-anchor="middle"
+        font-family="'Inter', Arial, sans-serif"
+        font-size="20" font-weight="600"
+        fill="#0EA5A0" letter-spacing="14">ADVISORY</text>
+
+  <!-- Divider -->
+  <rect x="220" y="405" width="160" height="2" rx="1" fill="#C9A84C"/>
+
+  <!-- Sdn Bhd -->
+  <text x="300" y="435" text-anchor="middle"
+        font-family="'Inter', Arial, sans-serif"
+        font-size="15" font-weight="400"
+        fill="rgba(255,255,255,0.6)" letter-spacing="3">BIJAK I Advisory Sdn Bhd</text>
+
+  <!-- SSM Reg -->
+  <text x="300" y="465" text-anchor="middle"
+        font-family="'Inter', Arial, sans-serif"
+        font-size="12" font-weight="400"
+        fill="rgba(255,255,255,0.35)" letter-spacing="1.5">SSM Reg: 202601031809(1693904-A)</text>
+
+  <!-- Gold accent bottom line -->
+  <rect x="260" y="490" width="80" height="2" rx="1" fill="#C9A84C" opacity="0.6"/>
+</svg>

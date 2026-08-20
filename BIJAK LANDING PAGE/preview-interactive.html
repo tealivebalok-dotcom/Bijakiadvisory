@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIJAK I Advisory — Interactive Landing Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2044;
+    --teal: #0EA5A0;
+    --gold: #C9A84C;
+    --light: #F4F7FB;
+    --border: #E2E8F0;
+    --gray: #6B7280;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  /* ── CUSTOM SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--navy); }
+
+  /* ── SCROLL PROGRESS BAR ── */
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    width: 0%;
+    z-index: 99999;
+    transition: width 0.1s linear;
+  }
+
+  /* ── MAGNETIC BUTTONS ── */
+  .magnetic-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--teal), #0c8c8c);
+    color: white;
+    box-shadow: 0 4px 20px rgba(14, 165, 160, 0.4);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 32px rgba(14, 165, 160, 0.6);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+  }
+  .btn-outline:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* ── 3D TILT CARDS ── */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+  .tilt-card:hover {
+    transform: perspective(1000px) rotateX(var(--rotateX, 0deg) rotateY(var(--rotateY, 0deg)) scale(1.03);
+  }
+
+  /* ── NAVBAR ACTIVE LINK ── */
+  .nav-links a.active {
+    color: var(--teal);
+  }
+
+  /* ── HERO ANIMATED GRADIENT ── */
+  .hero-bg-animated {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 40%, #0a2030 70%, var(--navy) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    z-index: 0;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ── HERO PARTICLES ── */
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: floatParticle linear infinite;
+  }
+  @keyframes floatParticle {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.15; }
+    90% { opacity: 0.15; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ── FLOATING GEOMETRIC SHAPES ── */
+  .geo-shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: geoFloat ease-in-out infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+  }
+  @keyframes geoFloat {
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(-20px) scale(1.05); }
+  }
+
+  /* ── TYPEWRITER CURSOR ── */
+  .typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--gold);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ── HOVER UNDERLINE ANIMATION ── */
+  .hover-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--teal);
+    transition: width 0.3s ease;
+  }
+  .hover-underline:hover::after { width: 100%; }
+
+  /* ── SECTION LABEL FLOATING ── */
+  .section-label {
+    display: inline-block;
+    position: relative;
+  }
+  .section-label::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    background: var(--teal);
+    transform: translateY(-50%);
+  }
+
+  /* ── STEP CARD HOVER GLOW ── */
+  .step-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  .step-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  .step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(14, 165, 160, 0.15);
+  }
+  .step-card:hover::before {
+    border-color: var(--teal);
+  }
+
+  /* ── SERVICE CARD HOVER ── */
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(15, 32, 68, 0.12);
+  }
+
+  /* ── CTA SECTION PULSE ── */
+  .cta-pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(14, 165, 160, 0.3);
+    border-radius: 50%;
+    animation: pulseRing 2s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes pulseRing {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+  }
+
+  /* ── SCROLL DOWN INDICATOR ── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: scrollBounce 2s ease-in-out infinite;
+    z-index: 5;
+  }
+  .scroll-indicator span {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid rgba(255,255,255,0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    transform: rotate(45deg);
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ── TESTIMONIAL CARD GLASS ── */
+  .testimonial-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(15, 32, 68, 0.1);
+  }
+
+  /* ── FAQ ACCORDION ── */
+  .faq-question {
+    cursor: pointer;
+    user-select: none;
+  }
+  .faq-toggle {
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  .faq-item.open .faq-toggle {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  .faq-item.open .faq-answer {
+    max-height: 400px;
+  }
+
+  /* ── FOOTER LINKS HOVER ── */
+  .footer-col ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .footer-col ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--teal);
+    transition: width 0.3s ease;
+  }
+  .footer-col ul li a:hover { color: var(--teal); }
+  .footer-col ul li a:hover::after { width: 100%; }
+
+  /* ── HERO STAT COUNTER ── */
+  .counter { font-variant-numeric: tabular-nums; }
+
+  /* ── SMOOTH SECTION REVEAL ── */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .scroll-indicator { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ── HERO SECTION WITH ANIMATIONS ── -->
+<section class="hero" style="position:relative; overflow:hidden; min-height:100vh; display:flex; align-items:center;">
+  <!-- Animated gradient background -->
+  <div class="hero-bg-animated"></div>
+
+  <!-- Floating geometric shapes -->
+  <div class="geo-shape" style="width:300px;height:300px;background:rgba(14,165,160,0.08);top:10%;right:-50px;animation-duration:6s;"></div>
+  <div class="geo-shape" style="width:200px;height:200px;background:rgba(201,168,76,0.06);bottom:20%;left:-30px;animation-duration:8s;animation-delay:1s;"></div>
+  <div class="geo-shape" style="width:150px;height:150px;background:rgba(255,255,255,0.04);top:40%;left:20%;animation-duration:10s;animation-delay:2s;"></div>
+
+  <!-- Particles -->
+  <div class="hero-particles" id="hero-particles"></div>
+
+  <div class="hero-content" style="position:relative;z-index:2;max-width:720px;margin:0 auto;padding:120px 24px;text-align:center;">
+    <div style="margin-bottom:24px;">
+      <span class="section-label" style="color:var(--teal);font-size:0.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;">🇲🇾 Malaysia's Trusted Company Secretarial Partner</span>
+    </div>
+
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:white;line-height:1.15;margin-bottom:20px;">
+      Open your business in Malaysia — <em style="color:var(--gold);">we handle the rest.</em>
+      <span class="typewriter-cursor"></span>
+    </h1>
+
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.8;max-width:560px;margin:0 auto 36px;">
+      From company incorporation to tax compliance, BIJAK I Advisory guides entrepreneurs through every step — in your language, on your schedule.
+    </p>
+
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;">
+      <a href="#contact" class="magnetic-btn btn-primary">Start Your Company Today →</a>
+      <a href="#how-it-works" class="magnetic-btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.4);">How It Works</a>
+    </div>
+
+    <!-- Stats -->
+    <div style="display:flex;gap:40px;justify-content:center;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div class="counter" style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--gold);" data-target="18" data-suffix="+">0</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:4px;">Years Finance</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="counter" style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--gold);" data-target="12" data-suffix="+">0</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:4px;">Years Accounting</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="counter" style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--gold);" data-target="300" data-suffix="+">0</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:4px;">Companies Served</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <!-- Wave bottom -->
+  <div style="position:absolute;bottom:0;left:0;width:100%;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Placeholder sections to demonstrate interactions -->
+<section style="padding:100px 24px;text-align:center;background:white;">
+  <span class="section-label" style="color:var(--teal);font-size:0.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Simple Process</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--navy);margin:16px 0 48px;">Four steps to your Malaysia company</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1000px;margin:0 auto;">
+    <div class="step-card tilt-card" style="background:white;border-radius:16px;padding:32px;border:1px solid var(--border);text-align:left;">
+      <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--teal),#0c8c8c);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1.2rem;margin-bottom:16px;">1</div>
+      <h4 style="color:var(--navy);margin-bottom:8px;">Free Consultation</h4>
+      <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">Tell us your goals. We recommend the right entity type, timeline, and outline all costs — no hidden fees.</p>
+    </div>
+    <div class="step-card tilt-card" style="background:white;border-radius:16px;padding:32px;border:1px solid var(--border);text-align:left;">
+      <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--teal),#0c8c8c);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1.2rem;margin-bottom:16px;">2</div>
+      <h4 style="color:var(--navy);margin-bottom:8px;">SSM & Banking</h4>
+      <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">We handle SSM registration and open your Malaysian corporate bank account. Fast, transparent, and fully managed.</p>
+    </div>
+    <div class="step-card tilt-card" style="background:white;border-radius:16px;padding:32px;border:1px solid var(--border);text-align:left;">
+      <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--teal),#0c8c8c);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1.2rem;margin-bottom:16px;">3</div>
+      <h4 style="color:var(--navy);margin-bottom:8px;">Licensing & Visa</h4>
+      <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">Business licences, work permits, and visa applications — so your team is ready to operate from day one.</p>
+    </div>
+    <div class="step-card tilt-card" style="background:white;border-radius:16px;padding:32px;border:1px solid var(--border);text-align:left;">
+      <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--teal),#0c8c8c);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1.2rem;margin-bottom:16px;">4</div>
+      <h4 style="color:var(--navy);margin-bottom:8px;">Ongoing Support</h4>
+      <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;">Accounting, payroll, audit, tax filing, annual compliance — handled by the same team that set you up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section style="position:relative;overflow:hidden;padding:120px 24px;background:linear-gradient(135deg,var(--navy),#1a3a6e);text-align:center;">
+  <div class="cta-pulse-ring"></div>
+  <div class="cta-pulse-ring" style="animation-delay:1s;"></div>
+  <div style="position:relative;z-index:2;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:white;margin-bottom:16px;">Ready to start your company?</h2>
+    <p style="color:rgba(255,255,255,0.65);font-size:1.05rem;margin-bottom:36px;">No obligations. No pressure. Just honest advice — in Malay, English, or Chinese.</p>
+    <a href="#contact" class="magnetic-btn btn-primary" style="font-size:1rem;padding:16px 40px;">Start Your Free Consultation →</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS GLASSMORPHISM -->
+<section style="padding:100px 24px;background:var(--light);">
+  <div style="text-align:center;margin-bottom:60px;">
+    <span class="section-label" style="color:var(--teal);font-size:0.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Client Stories</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--navy);margin-top:16px;">Trusted by Malaysian entrepreneurs</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto;">
+    <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;">
+      <div style="font-size:1.8rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"They handled everything from incorporation to bank account opening. I didn't lift a finger. Best decision I made for my business."</p>
+      <div style="font-weight:700;color:var(--navy);">— Tan, Tech Startup Founder</div>
+    </div>
+    <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;">
+      <div style="font-size:1.8rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"Fast, professional, and no hidden charges. They walked me through every step in Mandarin. Highly recommend BIJAK I."</p>
+      <div style="font-weight:700;color:var(--navy);">— Lee, F&B Business Owner</div>
+    </div>
+    <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;">
+      <div style="font-size:1.8rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
+      <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"I was worried about the process as a foreigner. BIJAK I made everything simple and stress-free. My company was registered in 3 days."</p>
+      <div style="font-weight:700;color:var(--navy);">— Ahmad, E-Commerce Entrepreneur</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section style="padding:100px 24px;background:white;">
+  <div style="text-align:center;margin-bottom:60px;">
+    <span class="section-label" style="color:var(--teal);font-size:0.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;">FAQ</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--navy);margin-top:16px;">Common questions answered</h2>
+  </div>
+  <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;">
+    <div class="faq-item" style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div class="faq-question" style="padding:20px 24px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;align-items:center;">
+        How long does company incorporation take?
+        <span class="faq-toggle" style="color:var(--teal);font-size:1.4rem;">+</span>
+      </div>
+      <div class="faq-answer" style="padding:0 24px;">
+        <p style="padding-bottom:20px;color:var(--gray);line-height:1.7;">With complete documentation, SSM online incorporation takes 1–3 working days. Timeline depends on entity type and completeness of documents — we keep you updated at every step.</p>
+      </div>
+    </div>
+    <div class="faq-item" style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div class="faq-question" style="padding:20px 24px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;align-items:center;">
+        Do I need to be in Malaysia to register a company?
+        <span class="faq-toggle" style="color:var(--teal);font-size:1.4rem;">+</span>
+      </div>
+      <div class="faq-answer" style="padding:0 24px;">
+        <p style="padding-bottom:20px;color:var(--gray);line-height:1.7;">No. The entire process can be completed remotely. We handle document submission, SSM correspondence, and provide a digital copy of your incorporation certificate.</p>
+      </div>
+    </div>
+    <div class="faq-item" style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div class="faq-question" style="padding:20px 24px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;align-items:center;">
+        Why do I need a company secretary?
+        <span class="faq-toggle" style="color:var(--teal);font-size:1.4rem;">+</span>
+      </div>
+      <div class="faq-answer" style="padding:0 24px;">
+        <p style="padding-bottom:20px;color:var(--gray);line-height:1.7;">The Companies Act 2016 requires every Malaysian company to have a qualified company secretary. BIJAK I provides licensed company secretaries for all our clients as part of our ongoing service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── SCROLL PROGRESS BAR ──
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scroll-progress').style.width = scrolled + '%';
+  });
+
+  // ── HERO PARTICLES ──
+  const particlesContainer = document.getElementById('hero-particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 2;
+    p.style.cssText = `
+      width: ${size}px; height: ${size}px;
+      background: ${['white','#0EA5A0','#C9A84C'][Math.floor(Math.random()*3)]};
+      left: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 10 + 8}s;
+      animation-delay: ${Math.random() * 5}s;
+    `;
+    particlesContainer.appendChild(p);
+  }
+
+  // ── COUNTER ANIMATION ──
+  function animateCounters() {
+    document.querySelectorAll('.counter').forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        counter.textContent = Math.floor(current) + suffix;
+      }, 30);
+    });
+  }
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+  // ── SCROLL REVEAL ──
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+  // ── FAQ ACCORDION ──
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── 3D TILT ON CARDS ──
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+      card.style.setProperty('--rotateX', rotateX + 'deg');
+      card.style.setProperty('--rotateY', rotateY + 'deg');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rotateX', '0deg');
+      card.style.setProperty('--rotateY', '0deg');
+    });
+  });
+
+  // ── MAGNETIC BUTTONS ──
+  document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // ── NAV ACTIVE LINKS ON SCROLL ──
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // ── SMOOTH SCROLL FOR ANCHOR LINKS ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

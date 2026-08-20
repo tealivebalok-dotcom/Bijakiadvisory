@@ -1,0 +1,15 @@
+<svg viewBox="0 0 360 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw_grad_fl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="60%" style="stop-color:#0EA5A0"/>
+      <stop offset="100%" style="stop-color:#C9A84C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0, 8)">
+    <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" fill="none" stroke="url(#bw_grad_fl)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 62 L70 54 L64 66" fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="210" y="60" font-family="'Playfair Display', Georgia, serif" font-size="38" font-weight="700" fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK I</text>
+  <text x="210" y="82" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#0EA5A0" text-anchor="middle" letter-spacing="4">ADVISORY</text>
+</svg>

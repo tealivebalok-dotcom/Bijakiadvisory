@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIJAK Logo Design Options - Professional Redesign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0F2044; }
+.header { background: #0F2044; color: white; padding: 48px 40px; text-align: center; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 12px; letter-spacing: 2px; }
+.header p { color: #C9A84C; font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; }
+.header .subtitle { margin-top: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding: 48px 40px; max-width: 1600px; margin: 0 auto; }
+.card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(15,32,68,0.08); }
+.card-num { font-size: 0.75rem; font-weight: 700; color: #0EA5A0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.card-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #0F2044; margin-bottom: 4px; }
+.card-tagline { font-size: 0.85rem; color: #C9A84C; font-weight: 500; margin-bottom: 24px; }
+
+.preview-full { background: #0F2044; border-radius: 12px; padding: 32px; margin-bottom: 24px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.preview-full svg { width: 180px; height: 180px; }
+
+.preview-row { display: flex; gap: 16px; width: 100%; }
+.preview-item { flex: 1; background: #F5F7FA; border-radius: 8px; padding: 16px; text-align: center; }
+.preview-item.dark { background: #0F2044; }
+.preview-item.silver { background: #E8ECF1; }
+.preview-item svg { width: 60px; height: 60px; }
+.preview-item.dark svg { width: 60px; height: 60px; }
+.preview-label { font-size: 0.7rem; color: #666; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.preview-item.dark .preview-label { color: rgba(255,255,255,0.6); }
+
+.wordmark { width: 100%; border-top: 1px solid #E8ECF1; padding-top: 20px; margin-top: 4px; }
+.wordmark svg { width: 200px; height: 44px; }
+
+.card-info { background: #F5F7FA; border-radius: 8px; padding: 16px; margin-top: 16px; }
+.info-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.82rem; }
+.info-row:last-child { margin-bottom: 0; }
+.info-label { color: #666; }
+.info-value { font-weight: 600; color: #0F2044; }
+.notes { font-size: 0.8rem; color: #555; line-height: 1.5; margin-top: 12px; font-style: italic; }
+
+.section-title { text-align: center; padding: 40px 40px 0; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #0F2044; }
+.section-sub { text-align: center; padding: 8px 40px 32px; color: #666; font-size: 0.95rem; max-width: 700px; margin: 0 auto; }
+
+.uniform-preview { background: white; padding: 48px 40px; }
+.uniform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 32px auto 0; }
+.uniform-item { background: #F5F7FA; border-radius: 12px; padding: 24px; text-align: center; }
+.uniform-item svg { width: 80px; height: 80px; }
+.uniform-label { font-size: 0.8rem; font-weight: 600; color: #0F2044; margin-top: 12px; display: block; }
+.uniform-desc { font-size: 0.72rem; color: #888; margin-top: 4px; }
+
+.color-section { background: white; padding: 48px 40px; }
+.color-palette { display: flex; gap: 24px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+.color-swatch { text-align: center; }
+.color-box { width: 100px; height: 100px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.color-name { font-weight: 600; margin-top: 8px; font-size: 0.85rem; }
+.color-hex { color: #888; font-size: 0.75rem; font-family: monospace; }
+
+.cta-section { background: #0F2044; color: white; padding: 48px 40px; text-align: center; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 16px; }
+.cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+
+@media (max-width: 1100px) { .cards { grid-template-columns: repeat(2, 1fr); } .uniform-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BIJAK Advisory</h1>
+  <p>Brand Identity Redesign</p>
+  <div class="subtitle">Professional · Iconic · Timeless — Designed for uniform embroidery, client presentations, and all future brand applications</div>
+</div>
+
+<div class="section-title">6 Design Concepts</div>
+<div class="section-sub">Each concept prioritizes: strong silhouette for small-scale embroidery · clean strokes for screen print · standalone icon that works without wordmark · timeless aesthetic</div>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="card-num">01-b-wave</div>
+    <div class="card-name">B-Wave (一笔画)</div>
+    <div class="card-tagline">Forward momentum, smart growth</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 65 L15 15 Q15 10 20 10 L40 10 Q55 10 55 25 Q55 38 42 40 L40 41 Q55 43 55 57 Q55 70 40 70 L20 70" 
+        fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="40" r="10" fill="none" stroke="#0EA5A0" stroke-width="4"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="50%" style="stop-color:#0EA5A0"/>
+      <stop offset="100%" style="stop-color:#C9A84C"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized B with wave motion - single flowing stroke -->
+  <path d="M50 170 L50 30 Q50 20 60 20 L110 20 Q145 20 145 55 Q145 80 120 85 L115 87 Q145 92 145 120 Q145 155 110 155 L60 155" 
+        fill="none" stroke="url(#bw_grad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head suggesting forward motion -->
+  <path d="M145 120 L160 105 L155 125" fill="none" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- B inside: subtle negative space suggestion -->
+  <circle cx="100" cy="87" r="18" fill="none" stroke="#0F2044" stroke-width="8"/>
+  <line x1="82" y1="55" x2="82" y2="120" stroke="#0F2044" stroke-width="8" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="50%" style="stop-color:#0EA5A0"/>
+      <stop offset="100%" style="stop-color:#C9A84C"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized B with wave motion - single flowing stroke -->
+  <path d="M50 170 L50 30 Q50 20 60 20 L110 20 Q145 20 145 55 Q145 80 120 85 L115 87 Q145 92 145 120 Q145 155 110 155 L60 155" 
+        fill="none" stroke="url(#bw_grad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head suggesting forward motion -->
+  <path d="M145 120 L160 105 L155 125" fill="none" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- B inside: subtle negative space suggestion -->
+  <circle cx="100" cy="87" r="18" fill="none" stroke="#0F2044" stroke-width="8"/>
+  <line x1="82" y1="55" x2="82" y2="120" stroke="#0F2044" stroke-width="8" stroke-linecap="round"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="50%" style="stop-color:#0EA5A0"/>
+      <stop offset="100%" style="stop-color:#C9A84C"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized B with wave motion - single flowing stroke -->
+  <path d="M50 170 L50 30 Q50 20 60 20 L110 20 Q145 20 145 55 Q145 80 120 85 L115 87 Q145 92 145 120 Q145 155 110 155 L60 155" 
+        fill="none" stroke="url(#bw_grad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head suggesting forward motion -->
+  <path d="M145 120 L160 105 L155 125" fill="none" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- B inside: subtle negative space suggestion -->
+  <circle cx="100" cy="87" r="18" fill="none" stroke="#0F2044" stroke-width="8"/>
+  <line x1="82" y1="55" x2="82" y2="120" stroke="#0F2044" stroke-width="8" stroke-linecap="round"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="50%" style="stop-color:#0EA5A0"/>
+      <stop offset="100%" style="stop-color:#C9A84C"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized B with wave motion - single flowing stroke -->
+  <path d="M50 170 L50 30 Q50 20 60 20 L110 20 Q145 20 145 55 Q145 80 120 85 L115 87 Q145 92 145 120 Q145 155 110 155 L60 155" 
+        fill="none" stroke="url(#bw_grad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head suggesting forward motion -->
+  <path d="M145 120 L160 105 L155 125" fill="none" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- B inside: subtle negative space suggestion -->
+  <circle cx="100" cy="87" r="18" fill="none" stroke="#0F2044" stroke-width="8"/>
+  <line x1="82" y1="55" x2="82" y2="120" stroke="#0F2044" stroke-width="8" stroke-linecap="round"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">1-color (or 2-color with accent)</span></div>
+      <div class="notes">"Flowing B with wave一笔画 feel. Strong silhouette. 1-color works. Embroidery-friendly thick strokes."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">02-shield-b</div>
+    <div class="card-name">Shield-B</div>
+    <div class="card-tagline">Trust, protection, compliance</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 8 L68 20 L68 45 Q68 68 40 78 Q12 68 12 45 L12 20 Z" 
+        fill="none" stroke="#0F2044" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M28 65 L28 15 Q28 10 33 10 L48 10 Q58 10 58 25 Q58 38 48 40 L45 41 Q58 43 58 55 Q58 68 48 68 L33 68" 
+        fill="none" stroke="#C9A84C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="100%" style="stop-color:#1A4A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield outline -->
+  <path d="M100 15 L170 40 L170 110 Q170 165 100 190 Q30 165 30 110 L30 40 Z" 
+        fill="none" stroke="url(#shield_grad)" stroke-width="16" stroke-linejoin="round"/>
+  <!-- B letterform inside shield -->
+  <path d="M65 160 L65 40 Q65 30 75 30 L105 30 Q135 30 135 60 Q135 85 110 90 L105 92 Q135 97 135 125 Q135 155 105 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Standalone B bar -->
+  <line x1="65" y1="155" x2="65" y2="30" stroke="#0EA5A0" stroke-width="18" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="100%" style="stop-color:#1A4A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield outline -->
+  <path d="M100 15 L170 40 L170 110 Q170 165 100 190 Q30 165 30 110 L30 40 Z" 
+        fill="none" stroke="url(#shield_grad)" stroke-width="16" stroke-linejoin="round"/>
+  <!-- B letterform inside shield -->
+  <path d="M65 160 L65 40 Q65 30 75 30 L105 30 Q135 30 135 60 Q135 85 110 90 L105 92 Q135 97 135 125 Q135 155 105 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Standalone B bar -->
+  <line x1="65" y1="155" x2="65" y2="30" stroke="#0EA5A0" stroke-width="18" stroke-linecap="round"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="100%" style="stop-color:#1A4A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield outline -->
+  <path d="M100 15 L170 40 L170 110 Q170 165 100 190 Q30 165 30 110 L30 40 Z" 
+        fill="none" stroke="url(#shield_grad)" stroke-width="16" stroke-linejoin="round"/>
+  <!-- B letterform inside shield -->
+  <path d="M65 160 L65 40 Q65 30 75 30 L105 30 Q135 30 135 60 Q135 85 110 90 L105 92 Q135 97 135 125 Q135 155 105 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Standalone B bar -->
+  <line x1="65" y1="155" x2="65" y2="30" stroke="#0EA5A0" stroke-width="18" stroke-linecap="round"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F2044"/>
+      <stop offset="100%" style="stop-color:#1A4A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield outline -->
+  <path d="M100 15 L170 40 L170 110 Q170 165 100 190 Q30 165 30 110 L30 40 Z" 
+        fill="none" stroke="url(#shield_grad)" stroke-width="16" stroke-linejoin="round"/>
+  <!-- B letterform inside shield -->
+  <path d="M65 160 L65 40 Q65 30 75 30 L105 30 Q135 30 135 60 Q135 85 110 90 L105 92 Q135 97 135 125 Q135 155 105 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Standalone B bar -->
+  <line x1="65" y1="155" x2="65" y2="30" stroke="#0EA5A0" stroke-width="18" stroke-linecap="round"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">2-color (navy shield + gold B)</span></div>
+      <div class="notes">"Shield = trust/protection. B is strong and clear. Classic professional services aesthetic."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">03-compass-b</div>
+    <div class="card-name">Compass-B</div>
+    <div class="card-tagline">Smart direction, wise navigation</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="35" fill="none" stroke="#0F2044" stroke-width="7"/>
+  <path d="M28 65 L28 15 Q28 10 33 10 L48 10 Q58 10 58 25 Q58 38 48 40 L45 41 Q58 43 58 55 Q58 68 48 68 L33 68" 
+        fill="none" stroke="#C9A84C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="40,10 44,28 40,22 36,28" fill="#C9A84C"/>
+  <circle cx="40" cy="40" r="5" fill="#C9A84C"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer compass circle -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#0F2044" stroke-width="14"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#0EA5A0" stroke-width="6"/>
+  <!-- B letterform -->
+  <path d="M65 155 L65 45 Q65 35 75 35 L105 35 Q135 35 135 65 Q135 90 110 95 L105 97 Q135 102 135 130 Q135 160 105 160 L75 160" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="65" y1="155" x2="65" y2="35" stroke="#0EA5A0" stroke-width="20" stroke-linecap="round"/>
+  <!-- Compass needle - gold -->
+  <polygon points="100,25 108,55 100,45 92,55" fill="#C9A84C"/>
+  <polygon points="100,175 108,145 100,155 92,145" fill="#0EA5A0"/>
+  <circle cx="100" cy="100" r="10" fill="#C9A84C"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer compass circle -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#0F2044" stroke-width="14"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#0EA5A0" stroke-width="6"/>
+  <!-- B letterform -->
+  <path d="M65 155 L65 45 Q65 35 75 35 L105 35 Q135 35 135 65 Q135 90 110 95 L105 97 Q135 102 135 130 Q135 160 105 160 L75 160" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="65" y1="155" x2="65" y2="35" stroke="#0EA5A0" stroke-width="20" stroke-linecap="round"/>
+  <!-- Compass needle - gold -->
+  <polygon points="100,25 108,55 100,45 92,55" fill="#C9A84C"/>
+  <polygon points="100,175 108,145 100,155 92,145" fill="#0EA5A0"/>
+  <circle cx="100" cy="100" r="10" fill="#C9A84C"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer compass circle -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#0F2044" stroke-width="14"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#0EA5A0" stroke-width="6"/>
+  <!-- B letterform -->
+  <path d="M65 155 L65 45 Q65 35 75 35 L105 35 Q135 35 135 65 Q135 90 110 95 L105 97 Q135 102 135 130 Q135 160 105 160 L75 160" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="65" y1="155" x2="65" y2="35" stroke="#0EA5A0" stroke-width="20" stroke-linecap="round"/>
+  <!-- Compass needle - gold -->
+  <polygon points="100,25 108,55 100,45 92,55" fill="#C9A84C"/>
+  <polygon points="100,175 108,145 100,155 92,145" fill="#0EA5A0"/>
+  <circle cx="100" cy="100" r="10" fill="#C9A84C"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer compass circle -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#0F2044" stroke-width="14"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#0EA5A0" stroke-width="6"/>
+  <!-- B letterform -->
+  <path d="M65 155 L65 45 Q65 35 75 35 L105 35 Q135 35 135 65 Q135 90 110 95 L105 97 Q135 102 135 130 Q135 160 105 160 L75 160" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="65" y1="155" x2="65" y2="35" stroke="#0EA5A0" stroke-width="20" stroke-linecap="round"/>
+  <!-- Compass needle - gold -->
+  <polygon points="100,25 108,55 100,45 92,55" fill="#C9A84C"/>
+  <polygon points="100,175 108,145 100,155 92,145" fill="#0EA5A0"/>
+  <circle cx="100" cy="100" r="10" fill="#C9A84C"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">2-3 color (navy circle + teal B bar + gold accents)</span></div>
+      <div class="notes">"Compass = guidance/navigation. B inside circle. Strong geometric balance. Works as pin/badge."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">04-diamond-b</div>
+    <div class="card-name">Diamond-B</div>
+    <div class="card-tagline">Precision, premium, value</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="40,8 72,40 40,72 8,40" fill="none" stroke="#0F2044" stroke-width="6" stroke-opacity="0.3"/>
+  <line x1="22" y1="68" x2="22" y2="12" stroke="#0F2044" stroke-width="12" stroke-linecap="round"/>
+  <path d="M22 12 L45 12 Q60 12 60 30 Q60 45 45 45 L22 45" fill="none" stroke="#0EA5A0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 45 L45 45 Q60 45 60 62 Q60 75 45 75 L22 75" fill="none" stroke="#C9A84C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond grid background suggestion -->
+  <polygon points="100,15 185,100 100,185 15,100" fill="none" stroke="#0F2044" stroke-width="8" stroke-opacity="0.3"/>
+  <polygon points="100,30 170,100 100,170 30,100" fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.4"/>
+  <!-- Bold B made of thick strokes -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="24" stroke-linecap="round"/>
+  <path d="M60 35 L105 35 Q150 35 150 72 Q150 105 105 105 L60 105" 
+        fill="none" stroke="#0EA5A0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L105 105 Q150 105 150 142 Q150 175 105 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond grid background suggestion -->
+  <polygon points="100,15 185,100 100,185 15,100" fill="none" stroke="#0F2044" stroke-width="8" stroke-opacity="0.3"/>
+  <polygon points="100,30 170,100 100,170 30,100" fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.4"/>
+  <!-- Bold B made of thick strokes -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="24" stroke-linecap="round"/>
+  <path d="M60 35 L105 35 Q150 35 150 72 Q150 105 105 105 L60 105" 
+        fill="none" stroke="#0EA5A0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L105 105 Q150 105 150 142 Q150 175 105 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond grid background suggestion -->
+  <polygon points="100,15 185,100 100,185 15,100" fill="none" stroke="#0F2044" stroke-width="8" stroke-opacity="0.3"/>
+  <polygon points="100,30 170,100 100,170 30,100" fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.4"/>
+  <!-- Bold B made of thick strokes -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="24" stroke-linecap="round"/>
+  <path d="M60 35 L105 35 Q150 35 150 72 Q150 105 105 105 L60 105" 
+        fill="none" stroke="#0EA5A0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L105 105 Q150 105 150 142 Q150 175 105 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond grid background suggestion -->
+  <polygon points="100,15 185,100 100,185 15,100" fill="none" stroke="#0F2044" stroke-width="8" stroke-opacity="0.3"/>
+  <polygon points="100,30 170,100 100,170 30,100" fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.4"/>
+  <!-- Bold B made of thick strokes -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="24" stroke-linecap="round"/>
+  <path d="M60 35 L105 35 Q150 35 150 72 Q150 105 105 105 L60 105" 
+        fill="none" stroke="#0EA5A0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L105 105 Q150 105 150 142 Q150 175 105 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">3-color (navy, teal, gold)</span></div>
+      <div class="notes">"Geometric diamond grid behind B. Bold color-blocked B. Very clean, premium feel. Scales beautifully."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">05-hexagon-clean</div>
+    <div class="card-name">Hexagon-B (Clean)</div>
+    <div class="card-tagline">Structure, system, compliance</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="40,8 70,25 70,55 40,72 10,55 10,25" 
+           fill="none" stroke="#0F2044" stroke-width="7" stroke-linejoin="round"/>
+  <line x1="30" y1="65" x2="30" y2="15" stroke="#C9A84C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M30 15 L43 15 Q54 15 54 30 Q54 42 43 43 L30 43" 
+        fill="none" stroke="#C9A84C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 43 L43 43 Q54 43 54 58 Q54 68 43 68 L30 68" 
+        fill="none" stroke="#C9A84C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean hexagon - single stroke, no fill -->
+  <polygon points="100,15 170,55 170,135 100,175 30,135 30,55" 
+           fill="none" stroke="#0F2044" stroke-width="14" stroke-linejoin="round"/>
+  <!-- Inner hexagon - subtle -->
+  <polygon points="100,38 148,68 148,128 100,158 52,128 52,68" 
+           fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.5"/>
+  <!-- Bold B inside -->
+  <line x1="75" y1="155" x2="75" y2="45" stroke="#C9A84C" stroke-width="16" stroke-linecap="round"/>
+  <path d="M75 45 L108 45 Q132 45 132 72 Q132 95 108 97 L75 98" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 98 L108 98 Q132 98 132 125 Q132 152 108 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean hexagon - single stroke, no fill -->
+  <polygon points="100,15 170,55 170,135 100,175 30,135 30,55" 
+           fill="none" stroke="#0F2044" stroke-width="14" stroke-linejoin="round"/>
+  <!-- Inner hexagon - subtle -->
+  <polygon points="100,38 148,68 148,128 100,158 52,128 52,68" 
+           fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.5"/>
+  <!-- Bold B inside -->
+  <line x1="75" y1="155" x2="75" y2="45" stroke="#C9A84C" stroke-width="16" stroke-linecap="round"/>
+  <path d="M75 45 L108 45 Q132 45 132 72 Q132 95 108 97 L75 98" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 98 L108 98 Q132 98 132 125 Q132 152 108 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean hexagon - single stroke, no fill -->
+  <polygon points="100,15 170,55 170,135 100,175 30,135 30,55" 
+           fill="none" stroke="#0F2044" stroke-width="14" stroke-linejoin="round"/>
+  <!-- Inner hexagon - subtle -->
+  <polygon points="100,38 148,68 148,128 100,158 52,128 52,68" 
+           fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.5"/>
+  <!-- Bold B inside -->
+  <line x1="75" y1="155" x2="75" y2="45" stroke="#C9A84C" stroke-width="16" stroke-linecap="round"/>
+  <path d="M75 45 L108 45 Q132 45 132 72 Q132 95 108 97 L75 98" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 98 L108 98 Q132 98 132 125 Q132 152 108 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean hexagon - single stroke, no fill -->
+  <polygon points="100,15 170,55 170,135 100,175 30,135 30,55" 
+           fill="none" stroke="#0F2044" stroke-width="14" stroke-linejoin="round"/>
+  <!-- Inner hexagon - subtle -->
+  <polygon points="100,38 148,68 148,128 100,158 52,128 52,68" 
+           fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.5"/>
+  <!-- Bold B inside -->
+  <line x1="75" y1="155" x2="75" y2="45" stroke="#C9A84C" stroke-width="16" stroke-linecap="round"/>
+  <path d="M75 45 L108 45 Q132 45 132 72 Q132 95 108 97 L75 98" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 98 L108 98 Q132 98 132 125 Q132 152 108 155 L75 155" 
+        fill="none" stroke="#C9A84C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">2-color (navy hexagon + gold B)</span></div>
+      <div class="notes">"Cleaned-up hexagon. Thicker strokes, single outline, bold B inside. Still reads as hex but much more professional."</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-num">06-b-monogram</div>
+    <div class="card-name">B-Monogram (Classic)</div>
+    <div class="card-tagline">Prestige, established, expertise</div>
+    
+    <div class="preview-full">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div style="width:80px;height:80px;"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 5 L68 5 L76 13 L76 67 L68 75 L12 75 L5 67 L5 13 Z" 
+        fill="none" stroke="#0F2044" stroke-width="6" stroke-linejoin="round"/>
+  <line x1="24" y1="68" x2="24" y2="12" stroke="#0F2044" stroke-width="10" stroke-linecap="round"/>
+  <path d="M24 12 L44 12 Q62 12 62 28 Q62 42 44 43 L24 44" 
+        fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 44 L44 44 Q62 44 62 60 Q62 73 44 74 L24 74" 
+        fill="none" stroke="#C9A84C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div class="preview-label">Icon</div>
+        </div>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer square with clipped corners -->
+  <path d="M30 10 L170 10 L190 30 L190 170 L170 190 L30 190 L10 170 L10 30 Z" 
+        fill="none" stroke="#0F2044" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner decorative frame -->
+  <path d="M45 25 L155 25 L175 45 L175 155 L155 175 L45 175 L25 155 L25 45 Z" 
+        fill="none" stroke="#0EA5A0" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- Elegant B letterform -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="20" stroke-linecap="round"/>
+  <path d="M60 35 L108 35 Q148 35 148 70 Q148 100 108 103 L60 105" 
+        fill="none" stroke="#0F2044" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L108 105 Q148 105 148 142 Q148 172 108 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Gold accent dot -->
+  <circle cx="148" cy="70" r="8" fill="#C9A84C"/>
+  <circle cx="148" cy="142" r="8" fill="#C9A84C"/>
+</svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wordmark"><svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="140" y="42" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700" 
+        fill="#0F2044" text-anchor="middle" letter-spacing="8">BIJAK</text>
+</svg></div>
+    
+    <div class="preview-row" style="margin-top:16px;">
+      <div class="preview-item dark"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer square with clipped corners -->
+  <path d="M30 10 L170 10 L190 30 L190 170 L170 190 L30 190 L10 170 L10 30 Z" 
+        fill="none" stroke="#0F2044" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner decorative frame -->
+  <path d="M45 25 L155 25 L175 45 L175 155 L155 175 L45 175 L25 155 L25 45 Z" 
+        fill="none" stroke="#0EA5A0" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- Elegant B letterform -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="20" stroke-linecap="round"/>
+  <path d="M60 35 L108 35 Q148 35 148 70 Q148 100 108 103 L60 105" 
+        fill="none" stroke="#0F2044" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L108 105 Q148 105 148 142 Q148 172 108 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Gold accent dot -->
+  <circle cx="148" cy="70" r="8" fill="#C9A84C"/>
+  <circle cx="148" cy="142" r="8" fill="#C9A84C"/>
+</svg><div class="preview-label">On Navy</div></div>
+      <div class="preview-item"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer square with clipped corners -->
+  <path d="M30 10 L170 10 L190 30 L190 170 L170 190 L30 190 L10 170 L10 30 Z" 
+        fill="none" stroke="#0F2044" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner decorative frame -->
+  <path d="M45 25 L155 25 L175 45 L175 155 L155 175 L45 175 L25 155 L25 45 Z" 
+        fill="none" stroke="#0EA5A0" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- Elegant B letterform -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="20" stroke-linecap="round"/>
+  <path d="M60 35 L108 35 Q148 35 148 70 Q148 100 108 103 L60 105" 
+        fill="none" stroke="#0F2044" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L108 105 Q148 105 148 142 Q148 172 108 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Gold accent dot -->
+  <circle cx="148" cy="70" r="8" fill="#C9A84C"/>
+  <circle cx="148" cy="142" r="8" fill="#C9A84C"/>
+</svg><div class="preview-label">On Light</div></div>
+      <div class="preview-item silver"><svg viewBox="0 0 200 200" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer square with clipped corners -->
+  <path d="M30 10 L170 10 L190 30 L190 170 L170 190 L30 190 L10 170 L10 30 Z" 
+        fill="none" stroke="#0F2044" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner decorative frame -->
+  <path d="M45 25 L155 25 L175 45 L175 155 L155 175 L45 175 L25 155 L25 45 Z" 
+        fill="none" stroke="#0EA5A0" stroke-width="4" stroke-opacity="0.6"/>
+  <!-- Elegant B letterform -->
+  <line x1="60" y1="165" x2="60" y2="35" stroke="#0F2044" stroke-width="20" stroke-linecap="round"/>
+  <path d="M60 35 L108 35 Q148 35 148 70 Q148 100 108 103 L60 105" 
+        fill="none" stroke="#0F2044" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 105 L108 105 Q148 105 148 142 Q148 172 108 175 L60 175" 
+        fill="none" stroke="#C9A84C" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Gold accent dot -->
+  <circle cx="148" cy="70" r="8" fill="#C9A84C"/>
+  <circle cx="148" cy="142" r="8" fill="#C9A84C"/>
+</svg><div class="preview-label">On Silver</div></div>
+    </div>
+    
+    <div class="card-info">
+      <div class="info-row"><span class="info-label">Colors</span><span class="info-value">2-color (navy + gold)</span></div>
+      <div class="notes">"Classic square frame with clipped corners. B with gold lower loop. Prestigious, established feel. Very clean for print."</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="uniform-preview">
+  <div class="section-title" style="padding-top:0;">Uniform & Application Mockups</div>
+  <div class="section-sub">How the selected logo translates to real-world brand applications</div>
+  <div class="uniform-grid">
+    <div class="uniform-item">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 65 L15 15 Q15 10 20 10 L40 10 Q55 10 55 25 Q55 38 42 40 L40 41 Q58 43 58 57 Q58 70 40 70 L20 70" 
+              fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="10" fill="none" stroke="#0EA5A0" stroke-width="4"/>
+      </svg>
+      <span class="uniform-label">Embroidery</span>
+      <span class="uniform-desc">Breast pocket · 1-color</span>
+    </div>
+    <div class="uniform-item">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 65 L15 15 Q15 10 20 10 L40 10 Q55 10 55 25 Q55 38 42 40 L40 41 Q58 43 58 57 Q58 70 40 70 L20 70" 
+              fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="10" fill="none" stroke="#0EA5A0" stroke-width="4"/>
+      </svg>
+      <span class="uniform-label">Name Card</span>
+      <span class="uniform-desc">Full color · 300gsm</span>
+    </div>
+    <div class="uniform-item">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 65 L15 15 Q15 10 20 10 L40 10 Q55 10 55 25 Q55 38 42 40 L40 41 Q58 43 58 57 Q58 70 40 70 L20 70" 
+              fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="10" fill="none" stroke="#0EA5A0" stroke-width="4"/>
+      </svg>
+      <span class="uniform-label">Lanyard</span>
+      <span class="uniform-desc">Screen print · 1-color</span>
+    </div>
+    <div class="uniform-item">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 65 L15 15 Q15 10 20 10 L40 10 Q55 10 55 25 Q55 38 42 40 L40 41 Q58 43 58 57 Q58 70 40 70 L20 70" 
+              fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="10" fill="none" stroke="#0EA5A0" stroke-width="4"/>
+      </svg>
+      <span class="uniform-label">Presentation</span>
+      <span class="uniform-desc">Cover · Full color</span>
+    </div>
+  </div>
+</div>
+
+<div class="color-section">
+  <div class="section-title" style="padding-top:0;">Brand Color Palette</div>
+  <div class="section-sub">Consistent across all applications — proven professional services palette</div>
+  <div class="color-palette">
+    <div class="color-swatch">
+      <div class="color-box" style="background:#0F2044;"></div>
+      <div class="color-name">Navy</div>
+      <div class="color-hex">#0F2044</div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-box" style="background:#1A4A8A;"></div>
+      <div class="color-name">Blue</div>
+      <div class="color-hex">#1A4A8A</div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-box" style="background:#0EA5A0;"></div>
+      <div class="color-name">Teal</div>
+      <div class="color-hex">#0EA5A0</div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-box" style="background:#C9A84C;"></div>
+      <div class="color-name">Gold</div>
+      <div class="color-hex">#C9A84C</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Which concept speaks to BIJAK?</h2>
+  <p>Each option is a starting point — we can mix elements, adjust colors, or refine details.</p>
+</div>
+
+</body>
+</html>

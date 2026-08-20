@@ -1,0 +1,181 @@
+<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect width="560" height="360" fill="#EEF4FF" rx="16"/>
+  
+  <!-- Background abstract shapes -->
+  <circle cx="480" cy="60" r="120" fill="#0EA5A0" opacity="0.06"/>
+  <circle cx="80" cy="300" r="100" fill="#0F2044" opacity="0.05"/>
+  
+  <!-- Floor line -->
+  <rect x="0" y="280" width="560" height="80" fill="#0F2044" opacity="0.04" rx="0"/>
+  
+  <!-- BIJAK Brand mark (left) -->
+  <g transform="translate(40, 40)">
+    <!-- B-Wave mark -->
+    <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" fill="none" stroke="#0F2044" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 62 L70 54 L64 66" fill="none" stroke="#C9A84C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="42" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="#0F2044" letter-spacing="4">BIJAK</text>
+    <text x="90" y="58" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0EA5A0" letter-spacing="3">ADVISORY</text>
+  </g>
+  
+  <!-- Large window / backdrop (right side) -->
+  <rect x="290" y="30" width="230" height="240" rx="12" fill="#0F2044" opacity="0.08"/>
+  <rect x="300" y="40" width="210" height="220" rx="8" fill="white" opacity="0.6"/>
+  
+  <!-- People: Person 1 (left, navy suit) - Director -->
+  <g transform="translate(60, 110)">
+    <!-- Body -->
+    <rect x="5" y="70" width="60" height="90" rx="10" fill="#0F2044"/>
+    <!-- Shirt/collar -->
+    <polygon points="35,70 20,90 35,90 50,90 35,70" fill="white"/>
+    <!-- Tie -->
+    <polygon points="35,70 30,90 35,130 40,90 35,70" fill="#C9A84C"/>
+    <!-- Neck -->
+    <rect x="26" y="52" width="18" height="22" rx="4" fill="#D4A882"/>
+    <!-- Head -->
+    <circle cx="35" cy="38" r="28" fill="#D4A882"/>
+    <!-- Hair -->
+    <ellipse cx="35" cy="18" rx="26" ry="14" fill="#2C1810"/>
+    <!-- Face details -->
+    <circle cx="26" cy="36" r="3" fill="#2C1810"/>
+    <circle cx="44" cy="36" r="3" fill="#2C1810"/>
+    <path d="M28 48 Q35 54 42 48" fill="none" stroke="#2C1810" stroke-width="2" stroke-linecap="round"/>
+    <!-- Arm holding tablet -->
+    <rect x="55" y="80" width="30" height="12" rx="6" fill="#0F2044"/>
+    <!-- Tablet -->
+    <rect x="78" y="70" width="35" height="50" rx="4" fill="#1A4A8A"/>
+    <rect x="81" y="73" width="29" height="38" rx="2" fill="#B8D4F0"/>
+    <!-- Name badge -->
+    <rect x="12" y="75" width="28" height="14" rx="3" fill="#C9A84C"/>
+    <text x="26" y="85" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#0F2044" text-anchor="middle">DIRECTOR</text>
+  </g>
+  
+  <!-- Person 2 (center, teal blouse) - Senior -->
+  <g transform="translate(155, 95)">
+    <!-- Body / blouse -->
+    <path d="M15 75 Q35 65 55 75 L55 160 Q35 165 15 160 Z" fill="#0EA5A0"/>
+    <!-- Neck -->
+    <rect x="28" y="50" width="14" height="28" rx="4" fill="#E8B89A"/>
+    <!-- Head -->
+    <circle cx="35" cy="35" r="26" fill="#E8B89A"/>
+    <!-- Hair (long, dark) -->
+    <ellipse cx="35" cy="18" rx="24" ry="16" fill="#1A0A00"/>
+    <ellipse cx="20" cy="30" rx="8" ry="16" fill="#1A0A00"/>
+    <ellipse cx="50" cy="30" rx="8" ry="16" fill="#1A0A00"/>
+    <!-- Glasses -->
+    <circle cx="27" cy="33" r="8" fill="none" stroke="#0F2044" stroke-width="2"/>
+    <circle cx="43" cy="33" r="8" fill="none" stroke="#0F2044" stroke-width="2"/>
+    <line x1="35" y1="33" x2="35" y2="33" stroke="#0F2044" stroke-width="2"/>
+    <!-- Eyes -->
+    <circle cx="27" cy="33" r="2" fill="#0F2044"/>
+    <circle cx="43" cy="33" r="2" fill="#0F2044"/>
+    <!-- Smile -->
+    <path d="M28 46 Q35 52 42 46" fill="none" stroke="#C47060" stroke-width="2" stroke-linecap="round"/>
+    <!-- Arms -->
+    <rect x="5" y="80" width="15" height="50" rx="7" fill="#0EA5A0"/>
+    <rect x="50" y="80" width="15" height="50" rx="7" fill="#0EA5A0"/>
+    <!-- Name badge -->
+    <rect x="18" y="78" width="28" height="14" rx="3" fill="#0F2044"/>
+    <text x="32" y="88" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="white" text-anchor="middle">SENIOR</text>
+  </g>
+  
+  <!-- Person 3 (right of center, gold blazer) - Associate -->
+  <g transform="translate(250, 105)">
+    <!-- Body -->
+    <rect x="8" y="70" width="54" height="85" rx="10" fill="#C9A84C"/>
+    <!-- Inner shirt -->
+    <rect x="22" y="70" width="26" height="30" rx="4" fill="white"/>
+    <!-- Neck -->
+    <rect x="26" y="50" width="18" height="24" rx="4" fill="#C8945A"/>
+    <!-- Head -->
+    <circle cx="35" cy="34" r="26" fill="#C8945A"/>
+    <!-- Hair (short, neat) -->
+    <ellipse cx="35" cy="18" rx="24" ry="14" fill="#1A0A00"/>
+    <!-- Eyes -->
+    <circle cx="27" cy="32" r="3" fill="#1A0A00"/>
+    <circle cx="43" cy="32" r="3" fill="#1A0A00"/>
+    <!-- Smile -->
+    <path d="M28 44 Q35 50 42 44" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+    <!-- Arm holding folder -->
+    <rect x="-5" y="80" width="15" height="45" rx="7" fill="#C9A84C"/>
+    <!-- Folder -->
+    <rect x="-20" y="85" width="40" height="30" rx="3" fill="#0F2044"/>
+    <rect x="-17" y="88" width="34" height="4" rx="1" fill="#C9A84C"/>
+    <!-- Name badge -->
+    <rect x="16" y="75" width="28" height="14" rx="3" fill="white"/>
+    <text x="30" y="85" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="#0F2044" text-anchor="middle">ASSOC</text>
+  </g>
+  
+  <!-- Person 4 (far right, casual) -->
+  <g transform="translate(340, 115)">
+    <!-- Body -->
+    <rect x="8" y="65" width="50" height="80" rx="10" fill="#1A4A8A"/>
+    <!-- Shirt -->
+    <polygon points="33,65 20,85 33,85 46,85 33,65" fill="white"/>
+    <!-- Neck -->
+    <rect x="24" y="48" width="18" height="22" rx="4" fill="#D4956A"/>
+    <!-- Head -->
+    <circle cx="33" cy="33" r="24" fill="#D4956A"/>
+    <!-- Hair -->
+    <ellipse cx="33" cy="18" rx="22" ry="13" fill="#3D2310"/>
+    <!-- Eyes -->
+    <circle cx="26" cy="31" r="2.5" fill="#1A0A00"/>
+    <circle cx="40" cy="31" r="2.5" fill="#1A0A00"/>
+    <!-- Smile -->
+    <path d="M26 42 Q33 48 40 42" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+    <!-- Name badge -->
+    <rect x="14" y="70" width="28" height="14" rx="3" fill="#0EA5A0"/>
+    <text x="28" y="80" font-family="Inter, sans-serif" font-size="6" font-weight="700" fill="white" text-anchor="middle">TEAM</text>
+  </g>
+  
+  <!-- Documents / certificates on wall (right panel) -->
+  <rect x="320" y="55" width="80" height="55" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="325" y="60" width="50" height="5" rx="2" fill="#0EA5A0" opacity="0.6"/>
+  <rect x="325" y="70" width="70" height="4" rx="2" fill="#E2E8F0"/>
+  <rect x="325" y="78" width="60" height="4" rx="2" fill="#E2E8F0"/>
+  <rect x="325" y="86" width="65" height="4" rx="2" fill="#E2E8F0"/>
+  <circle cx="380" cy="95" r="10" fill="#C9A84C" opacity="0.8"/>
+  <text x="380" y="99" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">SSM</text>
+  
+  <!-- Certificate 2 -->
+  <rect x="415" y="55" width="80" height="55" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="420" y="60" width="50" height="5" rx="2" fill="#0F2044" opacity="0.6"/>
+  <rect x="420" y="70" width="70" height="4" rx="2" fill="#E2E8F0"/>
+  <rect x="420" y="78" width="55" height="4" rx="2" fill="#E2E8F0"/>
+  <rect x="420" y="86" width="62" height="4" rx="2" fill="#E2E8F0"/>
+  <!-- Checkmark seal -->
+  <circle cx="475" cy="95" r="10" fill="#0EA5A0" opacity="0.8"/>
+  <path d="M470 95 L473 99 L481 91" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- SSM VERIFIED badge (prominent) -->
+  <g transform="translate(310, 130)">
+    <rect x="0" y="0" width="220" height="130" rx="12" fill="white" opacity="0.9" stroke="#0EA5A0" stroke-width="2"/>
+    <text x="110" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0EA5A0" text-anchor="middle" letter-spacing="1">TRUSTED &amp; VERIFIED</text>
+    <rect x="10" y="30" width="200" height="2" rx="1" fill="#0EA5A0" opacity="0.2"/>
+    <!-- Shield icon -->
+    <path d="M110 45 L80 55 L80 80 Q80 100 110 110 Q140 100 140 80 L140 55 Z" fill="#0F2044" opacity="0.9"/>
+    <path d="M110 52 L88 60 L88 78 Q88 93 110 100 Q132 93 132 78 L132 60 Z" fill="#0EA5A0"/>
+    <path d="M100 75 L107 82 L122 67" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Stats below -->
+    <text x="50" y="128" font-family="'Playfair Display', serif" font-size="18" font-weight="800" fill="#0F2044" text-anchor="middle">15+</text>
+    <text x="50" y="140" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#6B7280" text-anchor="middle">FINANCE YRS</text>
+    <text x="110" y="128" font-family="'Playfair Display', serif" font-size="18" font-weight="800" fill="#0F2044" text-anchor="middle">10+</text>
+    <text x="110" y="140" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#6B7280" text-anchor="middle">ACCTNG YRS</text>
+    <text x="170" y="128" font-family="'Playfair Display', serif" font-size="18" font-weight="800" fill="#0F2044" text-anchor="middle">300+</text>
+    <text x="170" y="140" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#6B7280" text-anchor="middle">COMPANIES</text>
+  </g>
+  
+  <!-- Speech bubbles (communication) -->
+  <g transform="translate(100, 55)">
+    <rect x="0" y="0" width="55" height="32" rx="10" fill="#0EA5A0" opacity="0.15"/>
+    <rect x="3" y="3" width="49" height="26" rx="8" fill="white"/>
+    <circle cx="12" cy="16" r="3" fill="#0EA5A0"/>
+    <circle cx="22" cy="16" r="3" fill="#0EA5A0"/>
+    <circle cx="32" cy="16" r="3" fill="#0EA5A0"/>
+    <!-- Arrow -->
+    <path d="M55 16 L68 16 L68 10 L80 16 L68 22 L68 16" fill="#0EA5A0" opacity="0.15"/>
+  </g>
+  
+  <!-- Small label at bottom -->
+  <text x="280" y="350" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0F2044" text-anchor="middle" letter-spacing="0.5">Your dedicated compliance team — direct, experienced, accountable.</text>
+</svg>

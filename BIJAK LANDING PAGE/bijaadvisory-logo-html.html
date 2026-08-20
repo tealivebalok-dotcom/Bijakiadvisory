@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; }
+
+  .logo-container {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #0F2044 0%, #1a3a6e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .accent-circle-1 {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: #0EA5A0;
+    opacity: 0.07;
+    border-radius: 50%;
+  }
+
+  .accent-circle-2 {
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    background: #C9A84C;
+    opacity: 0.07;
+    border-radius: 50%;
+  }
+
+  .wave-mark {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 16px;
+  }
+
+  .company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 12px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .advisory {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0EA5A0;
+    letter-spacing: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .gold-divider {
+    width: 160px;
+    height: 2px;
+    background: #C9A84C;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .company-full {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+
+  .reg-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+  }
+
+  .gold-dot {
+    width: 6px;
+    height: 6px;
+    background: #C9A84C;
+    border-radius: 50%;
+    margin-top: 20px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<div class="logo-container">
+  <div class="accent-circle-1"></div>
+  <div class="accent-circle-2"></div>
+
+  <!-- Wave Brand Mark SVG -->
+  <svg class="wave-mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 65 L0 15 Q0 10 6 10 L22 10 Q38 10 38 28 Q38 42 24 45 L22 46 Q38 48 38 62 Q38 75 22 75 L6 75"
+          fill="none" stroke="url(#waveGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M38 62 L50 54 L44 66"
+          fill="none" stroke="#C9A84C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <defs>
+      <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#FFFFFF"/>
+        <stop offset="100%" style="stop-color:#0EA5A0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="company-name">BIJAK I</div>
+  <div class="advisory">Advisory</div>
+  <div class="gold-divider"></div>
+  <div class="company-full">BIJAK I Advisory Sdn Bhd</div>
+  <div class="reg-number">SSM Reg: 202601031809(1693904-A)</div>
+  <div class="gold-dot"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIJAK Brand Identity — Uniform & Application Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #F0F2F5; color: #0F2044; }
+
+.header { background: #0F2044; color: white; padding: 48px 40px; text-align: center; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 4px; margin-bottom: 8px; }
+.header .tagline { color: #C9A84C; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; }
+.header .desc { margin-top: 16px; color: rgba(255,255,255,0.6); font-size: 0.88rem; max-width: 550px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+/* Logo showcase section */
+.logo-showcase { background: #0F2044; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.logo-mark { width: 200px; height: 200px; }
+.logo-full { width: 400px; height: 120px; }
+.logo-wordmark { width: 280px; height: 60px; }
+
+.logo-label { color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; text-align: center; }
+.logo-row { display: flex; gap: 48px; align-items: flex-end; flex-wrap: wrap; justify-content: center; }
+.logo-item { display: flex; flex-direction: column; align-items: center; }
+
+/* Main content */
+.content { padding: 0 40px 60px; max-width: 1400px; margin: 0 auto; }
+
+.section-head { display: flex; align-items: center; gap: 16px; margin: 48px 0 24px; }
+.section-num { background: #0EA5A0; color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 1px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #0F2044; }
+.section-sub { color: #666; font-size: 0.85rem; margin-top: 4px; }
+
+/* Uniform cards grid */
+.uniform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.uniform-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(15,32,68,0.08); }
+.uniform-preview { height: 220px; display: flex; align-items: center; justify-content: center; position: relative; }
+.uniform-preview.dark { background: #0F2044; }
+.uniform-preview.light { background: #F5F7FA; }
+.uniform-preview.white { background: #FFFFFF; border-bottom: 1px solid #E8ECF1; }
+.uniform-preview.silver { background: #E8ECF1; }
+.uniform-preview.gold { background: linear-gradient(135deg, #0F2044, #1A4A8A); }
+
+.u-icon { width: 80px; height: 80px; }
+.u-icon-sm { width: 50px; height: 50px; }
+.u-icon-xs { width: 32px; height: 32px; }
+
+.uniform-info { padding: 20px; }
+.uniform-name { font-weight: 600; font-size: 0.95rem; color: #0F2044; margin-bottom: 4px; }
+.uniform-type { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.uniform-detail { font-size: 0.8rem; color: #666; margin-top: 8px; line-height: 1.5; }
+.u-badge { position: absolute; top: 12px; right: 12px; background: #0EA5A0; color: white; font-size: 0.65rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px; }
+
+/* Shirt mockup */
+.shirt-mockup { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.shirt-body { position: absolute; width: 140px; height: 160px; background: white; border-radius: 8px 8px 4px 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.shirt-collar { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 40px; height: 20px; background: white; border-radius: 0 0 20px 20px; border: 2px solid #E8ECF1; border-top: none; }
+.shirt-pocket { position: absolute; top: 50px; left: 18px; width: 36px; height: 40px; border: 2px solid #E8ECF1; border-top: none; border-radius: 0 0 4px 4px; background: white; display: flex; align-items: center; justify-content: center; }
+.shirt-pocket svg { width: 22px; height: 22px; }
+
+/* Name card mockup */
+.card-mockup { width: 160px; height: 100px; background: white; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); display: flex; overflow: hidden; }
+.card-left { width: 35%; background: #0F2044; display: flex; align-items: center; justify-content: center; padding: 12px; }
+.card-right { width: 65%; padding: 12px; display: flex; flex-direction: column; justify-content: center; }
+.card-right .c-name { font-family: 'Playfair Display', serif; font-size: 10px; font-weight: 700; color: #0F2044; }
+.card-right .c-title { font-size: 7px; color: #666; margin-top: 2px; }
+.card-right .c-contact { font-size: 6px; color: #888; margin-top: 6px; line-height: 1.6; }
+
+/* Folder mockup */
+.folder-mockup { width: 140px; height: 100px; position: relative; }
+.folder-back { position: absolute; width: 130px; height: 90px; background: #0F2044; border-radius: 6px 6px 0 0; bottom: 0; }
+.folder-front { position: absolute; width: 130px; height: 85px; background: #1A4A8A; border-radius: 6px; bottom: 0; display: flex; align-items: center; justify-content: center; }
+.folder-tab { position: absolute; top: 0; left: 20px; width: 50px; height: 16px; background: #1A4A8A; border-radius: 4px 4px 0 0; }
+
+/* Envelope mockup */
+.envelope-mockup { width: 140px; height: 90px; background: white; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); position: relative; overflow: hidden; }
+.envelope-flap { position: absolute; top: 0; left: 0; right: 0; height: 40px; background: #0EA5A0; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.envelope-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.envelope-logo svg { width: 40px; height: 40px; }
+
+/* Presentation cover */
+.pres-mockup { width: 130px; height: 90px; background: #0F2044; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.pres-mockup svg { width: 50px; height: 50px; }
+.pres-mockup span { color: white; font-size: 7px; letter-spacing: 2px; text-transform: uppercase; }
+
+/* Lanyard mockup */
+.lanyard-mockup { width: 100px; height: 140px; position: relative; display: flex; flex-direction: column; align-items: center; }
+.lanyard-strap { width: 20px; height: 100px; background: #0F2044; }
+.lanyard-badge { width: 60px; height: 60px; background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; position: absolute; bottom: 10px; }
+.lanyard-badge svg { width: 36px; height: 36px; }
+.lanyard-clip { width: 24px; height: 12px; background: #C9A84C; border-radius: 2px; position: absolute; top: 0; }
+
+/* Pen mockup */
+.pen-mockup { width: 80px; height: 140px; display: flex; flex-direction: column; align-items: center; }
+.pen-body { width: 16px; height: 100px; background: linear-gradient(to bottom, #0F2044 70%, #C9A84C 70%); border-radius: 8px 8px 4px 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.pen-tip { width: 8px; height: 16px; background: #888; border-radius: 0 0 4px 4px; }
+.pen-clip { width: 8px; height: 24px; background: #0F2044; border-radius: 4px; position: absolute; top: 20px; transform: translateX(10px); }
+.pen-logo { width: 100px; height: 30px; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 8px; }
+.pen-logo svg { width: 80px; height: 20px; }
+
+/* Mug mockup */
+.mug-mockup { position: relative; width: 80px; height: 90px; }
+.mug-body { width: 60px; height: 80px; background: white; border-radius: 0 0 8px 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: absolute; bottom: 0; left: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.mug-handle { position: absolute; right: 0; top: 15px; width: 18px; height: 30px; border: 6px solid #E8ECF1; border-left: none; border-radius: 0 12px 12px 0; }
+.mug-logo { width: 40px; height: 40px; }
+.mug-logo svg { width: 100%; height: 100%; }
+
+/* Notebook mockup */
+.notebook-mockup { width: 80px; height: 110px; background: #0F2044; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); position: relative; display: flex; align-items: center; justify-content: center; }
+.notebook-binding { position: absolute; left: 8px; top: 10px; bottom: 10px; width: 4px; background: #C9A84C; border-radius: 2px; }
+.notebook-pages { position: absolute; right: 6px; top: 8px; bottom: 8px; width: 2px; background: rgba(255,255,255,0.2); border-radius: 1px; }
+.notebook-logo { width: 44px; height: 44px; }
+
+/* Email signature */
+.email-sig { background: white; border-radius: 8px; padding: 20px; display: flex; align-items: center; gap: 16px; max-width: 400px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.sig-logo { width: 60px; height: 60px; flex-shrink: 0; }
+.sig-info { border-left: 2px solid #0EA5A0; padding-left: 16px; }
+.sig-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #0F2044; }
+.sig-title { font-size: 0.8rem; color: #666; margin-top: 2px; }
+.sig-contact { font-size: 0.75rem; color: #888; margin-top: 6px; line-height: 1.6; }
+
+/* WhatsApp status */
+.wa-mockup { width: 140px; height: 100px; background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+.wa-header { background: #0F2044; color: white; padding: 8px 12px; font-size: 0.7rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.wa-header svg { width: 16px; height: 16px; }
+.wa-body { padding: 10px; flex: 1; display: flex; align-items: center; justify-content: center; }
+.wa-content { background: #DCF8C6; border-radius: 8px; padding: 8px 12px; font-size: 0.7rem; color: #333; max-width: 110px; line-height: 1.4; }
+
+/* Stamp/seal mockup */
+.stamp-mockup { width: 80px; height: 80px; border: 3px solid #C9A84C; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+.stamp-mockup::before { content: ''; position: absolute; inset: 4px; border: 1px solid #C9A84C; border-radius: 50%; }
+.stamp-inner { width: 40px; height: 40px; }
+
+/* Color palette section */
+.palette-section { background: white; padding: 48px 40px; }
+.palette-grid { display: flex; gap: 32px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+.palette-item { text-align: center; }
+.palette-swatch { width: 100px; height: 100px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.palette-name { font-weight: 600; margin-top: 10px; font-size: 0.9rem; }
+.palette-hex { color: #888; font-size: 0.75rem; font-family: monospace; margin-top: 2px; }
+.palette-use { font-size: 0.72rem; color: #666; margin-top: 4px; max-width: 100px; }
+
+/* Typography section */
+.typo-section { padding: 48px 40px; }
+.typo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; }
+.typo-card { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 16px rgba(15,32,68,0.08); }
+.typo-label { font-size: 0.7rem; font-weight: 700; color: #0EA5A0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.typo-sample { color: #0F2044; line-height: 1.3; }
+.typo-sample.playfair { font-family: 'Playfair Display', serif; font-size: 2rem; }
+.typo-sample.playfair-sm { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+.typo-sample.inter { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #555; }
+.typo-sample.inter-lg { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; }
+.typo-sample.inter-bold { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; }
+
+/* Footer */
+.footer { background: #0F2044; color: rgba(255,255,255,0.5); text-align: center; padding: 32px; font-size: 0.8rem; }
+.footer span { color: #C9A84C; }
+
+/* Responsive */
+@media (max-width: 1100px) { .uniform-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .uniform-grid { grid-template-columns: 1fr; } .typo-grid { grid-template-columns: 1fr; } .logo-row { gap: 24px; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>BIJAK ADVISORY</h1>
+  <div class="tagline">Brand Identity System</div>
+  <div class="desc">Professional · Iconic · Timeless — Designed for uniform embroidery, client presentations, and all future brand touchpoints</div>
+</div>
+
+<!-- LOGO SHOWCASE -->
+<div class="logo-showcase">
+  <div class="logo-row">
+    <div class="logo-item">
+      <div class="logo-mark">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bw_grad_main" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0F2044"/>
+              <stop offset="60%" style="stop-color:#0EA5A0"/>
+              <stop offset="100%" style="stop-color:#C9A84C"/>
+            </linearGradient>
+          </defs>
+          <path d="M55 170 L55 30 Q55 20 65 20 L105 20 Q145 20 145 55 Q145 85 115 90 L105 92 Q145 97 145 130 Q145 165 105 165 L65 165" 
+                fill="none" stroke="url(#bw_grad_main)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M145 130 L162 115 L155 138" 
+                fill="none" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 100 Q70 85 100 100 Q130 115 170 100" 
+                fill="none" stroke="#0EA5A0" stroke-width="6" stroke-opacity="0.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-label">Brand Mark</div>
+    </div>
+    <div class="logo-item">
+      <div class="logo-full">
+        <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bw_grad_full" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0F2044"/>
+              <stop offset="60%" style="stop-color:#0EA5A0"/>
+              <stop offset="100%" style="stop-color:#C9A84C"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(0, 10)">
+            <path d="M25 80 L25 20 Q25 12 33 12 L52 12 Q72 12 72 35 Q72 52 54 56 L52 57 Q72 60 72 78 Q72 96 52 96 L33 96" 
+                  fill="none" stroke="url(#bw_grad_full)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M72 78 L88 68 L82 84" 
+                  fill="none" stroke="#C9A84C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text x="240" y="72" font-family="'Playfair Display', Georgia, serif" font-size="42" font-weight="700" 
+                fill="#0F2044" text-anchor="middle" letter-spacing="12">BIJAK</text>
+          <text x="240" y="98" font-family="'Inter', sans-serif" font-size="11" font-weight="400" 
+                fill="#0EA5A0" text-anchor="middle" letter-spacing="4">ADVISORY</text>
+        </svg>
+      </div>
+      <div class="logo-label">Full Logo</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- UNIFORM APPLICATIONS -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <div class="section-title">Uniform & Apparel</div>
+      <div class="section-sub">Consistent brand presence across all staff uniforms</div>
+    </div>
+  </div>
+
+  <div class="uniform-grid">
+    <!-- Polo Shirt -->
+    <div class="uniform-card">
+      <div class="uniform-preview white">
+        <div class="shirt-mockup">
+          <div class="shirt-body"></div>
+          <div class="shirt-collar"></div>
+          <div class="shirt-pocket">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">1-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Polo Shirt</div>
+        <div class="uniform-type">Embroidery — Breast Pocket</div>
+        <div class="uniform-detail">Navy shirt with white logo embroidered on breast pocket. Single-color embroidery (navy thread).</div>
+      </div>
+    </div>
+
+    <!-- Name Card -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="card-mockup">
+          <div class="card-left">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-right">
+            <div class="c-name">Ahmad Raziq</div>
+            <div class="c-title">Senior Consultant</div>
+            <div class="c-contact">bijakagent@gmail.com<br>012-382 8827</div>
+          </div>
+        </div>
+        <span class="u-badge">2-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Name Card</div>
+        <div class="uniform-type">Digital Print — 300gsm</div>
+        <div class="uniform-detail">Split design: navy left panel with logo, white right for details. Premium matte finish.</div>
+      </div>
+    </div>
+
+    <!-- Lanyard -->
+    <div class="uniform-card">
+      <div class="uniform-preview dark">
+        <div class="lanyard-mockup">
+          <div class="lanyard-clip"></div>
+          <div class="lanyard-strap"></div>
+          <div class="lanyard-badge">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">1-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Lanyard</div>
+        <div class="uniform-type">Screen Print — Polyester</div>
+        <div class="uniform-detail">Navy lanyard with white logo. Gold clip detail. Used for office access and event badges.</div>
+      </div>
+    </div>
+
+    <!-- Name Badge -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div style="width: 70px; height: 90px; background: white; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: flex; flex-direction: column; align-items: center; padding: 8px;">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px; margin-bottom: 4px;">
+            <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                  fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 62 L70 54 L64 66" 
+                  fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div style="font-size: 5px; font-family: 'Playfair Display', serif; font-weight: 700; color: #0F2044; text-align: center; line-height: 1.3;">BIJAK<br>ADVISORY</div>
+          <div style="width: 50px; height: 1px; background: #E8ECF1; margin: 3px 0;"></div>
+          <div style="font-size: 5px; color: #666; text-align: center;">Ahmad Raziq</div>
+          <div style="font-size: 4px; color: #888; text-align: center;">Senior Consultant</div>
+        </div>
+        <span class="u-badge">FULL COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Name Badge</div>
+        <div class="uniform-type">Digital Print — PVC</div>
+        <div class="uniform-detail">White PVC badge with full-color logo, name, and title. Clear protective coating.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PRINT COLLATERAL -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <div class="section-title">Print & Stationery</div>
+      <div class="section-sub">Professional documents and marketing materials</div>
+    </div>
+  </div>
+
+  <div class="uniform-grid">
+    <!-- Presentation Folder -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="folder-mockup">
+          <div class="folder-back"></div>
+          <div class="folder-tab"></div>
+          <div class="folder-front">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">1-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Presentation Folder</div>
+        <div class="uniform-type">Screen Print — Card Stock</div>
+        <div class="uniform-detail">Navy folder with white logo debossed on front. Holds A4 documents. Professional matte lamination.</div>
+      </div>
+    </div>
+
+    <!-- Envelope -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="envelope-mockup">
+          <div class="envelope-flap"></div>
+          <div class="envelope-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">2-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Envelope</div>
+        <div class="uniform-type">Offset Print — Corporate</div>
+        <div class="uniform-detail">White envelope with navy and teal branding on flap. DL size for formal correspondence.</div>
+      </div>
+    </div>
+
+    <!-- Presentation Cover -->
+    <div class="uniform-card">
+      <div class="uniform-preview dark">
+        <div class="pres-mockup">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                  fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 62 L70 54 L64 66" 
+                  fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>ADVISORY</span>
+        </div>
+        <span class="u-badge">FULL COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Presentation Deck Cover</div>
+        <div class="uniform-type">Digital Print — Softcover</div>
+        <div class="uniform-detail">Navy cover with full-color logo. Used for client proposals, quarterly reports, and pitch decks.</div>
+      </div>
+    </div>
+
+    <!-- Notebook -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="notebook-mockup">
+          <div class="notebook-binding"></div>
+          <div class="notebook-pages"></div>
+          <div class="notebook-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">1-COLOR</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Notebook</div>
+        <div class="uniform-type">Deboss — Soft Cover</div>
+        <div class="uniform-detail">Navy notebook with white debossed logo. Gold binding. Distributed to clients and team.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIGITAL APPLICATIONS -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <div class="section-title">Digital & Social</div>
+      <div class="section-sub">Online presence and digital communication</div>
+    </div>
+  </div>
+
+  <div class="uniform-grid">
+    <!-- WhatsApp -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="wa-mockup">
+          <div class="wa-header">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            BIJAK Advisory
+          </div>
+          <div class="wa-body">
+            <div class="wa-content">Thank you for choosing BIJAK. How can we assist you today?</div>
+          </div>
+        </div>
+        <span class="u-badge">CHAT</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">WhatsApp Business</div>
+        <div class="uniform-type">Profile Photo + Quick Replies</div>
+        <div class="uniform-detail">Logo as profile photo. Quick reply templates with consistent brand tone and styling.</div>
+      </div>
+    </div>
+
+    <!-- Email Signature -->
+    <div class="uniform-card">
+      <div class="uniform-preview light" style="align-items: center;">
+        <div class="email-sig">
+          <div class="sig-logo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="sig-info">
+            <div class="sig-name">Ahmad Raziq</div>
+            <div class="sig-title">Senior Consultant</div>
+            <div class="sig-contact">bijakagent@gmail.com · 012-382 8827</div>
+          </div>
+        </div>
+        <span class="u-badge">EMAIL</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Email Signature</div>
+        <div class="uniform-type">HTML Email — Standard</div>
+        <div class="uniform-detail">Consistent signature block with logo, contact details, and company tagline. All staff统一.</div>
+      </div>
+    </div>
+
+    <!-- Social Profile -->
+    <div class="uniform-card">
+      <div class="uniform-preview dark">
+        <div style="width: 80px; height: 80px; background: #0EA5A0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+            <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                  fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 62 L70 54 L64 66" 
+                  fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="u-badge">SOCIAL</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Social Media Profile</div>
+        <div class="uniform-type">LinkedIn · Facebook · Instagram</div>
+        <div class="uniform-detail">Circular profile photo with teal background. Consistent across all social platforms.</div>
+      </div>
+    </div>
+
+    <!-- Website Favicon -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div style="width: 60px; height: 60px; background: #0F2044; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 36px; height: 36px;">
+            <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                  fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 62 L70 54 L64 66" 
+                  fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="u-badge">WEB</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Website Favicon</div>
+        <div class="uniform-type">Browser Tab · App Icon</div>
+        <div class="uniform-detail">Navy square with white logo. Scales cleanly from 16px browser tab to 180px app icon.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GIFT & ACCESSORY ITEMS -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <div class="section-title">Gifts & Accessories</div>
+      <div class="section-sub">Branded merchandise for client gifts and internal use</div>
+    </div>
+  </div>
+
+  <div class="uniform-grid">
+    <!-- Pen -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="pen-mockup">
+          <div style="position:relative; width: 80px;">
+            <div class="pen-clip"></div>
+            <div style="display:flex;flex-direction:column;align-items:center;">
+              <div class="pen-tip"></div>
+              <div class="pen-body"></div>
+            </div>
+          </div>
+        </div>
+        <span class="u-badge">BRANDING</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Pen</div>
+        <div class="uniform-type">Laser Engrave — Metal</div>
+        <div class="uniform-detail">Navy and gold metallic pen with white engraved logo. Premium client gift item.</div>
+      </div>
+    </div>
+
+    <!-- Mug -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div class="mug-mockup">
+          <div class="mug-handle"></div>
+          <div class="mug-body">
+            <div class="mug-logo">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                      fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M58 62 L70 54 L64 66" 
+                      fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <span class="u-badge">PRINT</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Coffee Mug</div>
+        <div class="uniform-type">Dishwasher Safe Print</div>
+        <div class="uniform-detail">White ceramic mug with full-color wrap-around print. Office and client gift use.</div>
+      </div>
+    </div>
+
+    <!-- Tote Bag -->
+    <div class="uniform-card">
+      <div class="uniform-preview white">
+        <div style="width: 120px; height: 90px; background: #F5F7FA; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative;">
+          <!-- Bag handles -->
+          <div style="position: absolute; top: 0; left: 30px; width: 60px; height: 20px; border: 3px solid #E8ECF1; border-bottom: none; border-radius: 20px 20px 0 0;"></div>
+          <!-- Bag body -->
+          <div style="width: 100px; height: 65px; background: white; border: 2px solid #E8ECF1; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+              <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                    fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M58 62 L70 54 L64 66" 
+                    fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <span class="u-badge">SCREEN PRINT</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">Tote Bag</div>
+        <div class="uniform-type">Screen Print — Canvas</div>
+        <div class="uniform-detail">Natural canvas tote with navy screen-printed logo. Eco-friendly client gift alternative.</div>
+      </div>
+    </div>
+
+    <!-- USB Drive -->
+    <div class="uniform-card">
+      <div class="uniform-preview light">
+        <div style="width: 80px; height: 50px; background: #0F2044; border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px;">
+            <path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" 
+                  fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 62 L70 54 L64 66" 
+                  fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="u-badge">ENGRAVE</span>
+      </div>
+      <div class="uniform-info">
+        <div class="uniform-name">USB Drive</div>
+        <div class="uniform-type">Laser Engrave — Metal</div>
+        <div class="uniform-detail">Slim metal USB with engraved logo. Pre-loaded with company profiles and service brochures.</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- COLOR PALETTE -->
+<div class="palette-section">
+  <div class="section-head" style="margin-top:0;">
+    <span class="section-num">05</span>
+    <div>
+      <div class="section-title">Brand Colors</div>
+      <div class="section-sub">Consistent palette across all applications</div>
+    </div>
+  </div>
+  <div class="palette-grid">
+    <div class="palette-item">
+      <div class="palette-swatch" style="background: #0F2044;"></div>
+      <div class="palette-name">Navy</div>
+      <div class="palette-hex">#0F2044</div>
+      <div class="palette-use">Primary · Logos · Uniforms</div>
+    </div>
+    <div class="palette-item">
+      <div class="palette-swatch" style="background: #1A4A8A;"></div>
+      <div class="palette-name">Blue</div>
+      <div class="palette-hex">#1A4A8A</div>
+      <div class="palette-use">Secondary · Headings</div>
+    </div>
+    <div class="palette-item">
+      <div class="palette-swatch" style="background: #0EA5A0;"></div>
+      <div class="palette-name">Teal</div>
+      <div class="palette-hex">#0EA5A0</div>
+      <div class="palette-use">Accent · Highlights</div>
+    </div>
+    <div class="palette-item">
+      <div class="palette-swatch" style="background: #C9A84C;"></div>
+      <div class="palette-name">Gold</div>
+      <div class="palette-hex">#C9A84C</div>
+      <div class="palette-use">Premium · CTAs · Arrows</div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="typo-section">
+  <div class="section-head" style="margin-top:0;">
+    <span class="section-num">06</span>
+    <div>
+      <div class="section-title">Typography</div>
+      <div class="section-sub">Two-font system for headings and body</div>
+    </div>
+  </div>
+  <div class="typo-grid">
+    <div class="typo-card">
+      <div class="typo-label">Display / Headings</div>
+      <div class="typo-sample playfair">Playfair Display</div>
+      <div class="typo-sample playfair-sm" style="margin-top: 12px;">BIJAK Advisory</div>
+      <div class="typo-sample inter" style="margin-top: 12px;">Used for: Logo wordmark, section titles, hero headings, name cards</div>
+    </div>
+    <div class="typo-card">
+      <div class="typo-label">Body / UI</div>
+      <div class="typo-sample inter-lg">Inter — The quick brown fox</div>
+      <div class="typo-sample inter-bold" style="margin-top: 8px;">Senior Consultant</div>
+      <div class="typo-sample inter" style="margin-top: 8px;">Used for: Body text, UI elements, email signatures, presentations, all digital content</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  BIJAK ADVISORY — Brand Identity System · Designed for <span>uniform</span>, <span>presentation</span>, and <span>client</span> applications
+</div>
+
+</body>
+</html>
