@@ -218,30 +218,53 @@
     }
     .section-sub { font-size: 1rem; color: var(--gray); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
 
-    /* ── HOW IT WORKS (with illustration) ── */
-    .steps-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-    }
-    .step-card {
+    /* ── HOW IT WORKS (interactive expander) ── */
+    .step-expander {
       background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px 20px; text-align: center;
-      transition: all 0.3s; position: relative;
+      border-radius: var(--radius); margin-bottom: 14px;
+      transition: all 0.3s; overflow: hidden;
     }
-    .step-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--teal); }
-    .step-num {
-      width: 48px; height: 48px; border-radius: 50%;
+    .step-expander:hover { border-color: var(--teal); }
+    .step-expander[open] { box-shadow: var(--shadow-lg); border-color: var(--teal); }
+    .step-expander summary {
+      display: flex; align-items: center; gap: 20px;
+      padding: 22px 24px; cursor: pointer; list-style: none;
+      user-select: none;
+    }
+    .step-expander summary::-webkit-details-marker { display: none; }
+    .step-expander summary::marker { display: none; }
+    .expander-num {
+      width: 44px; height: 44px; border-radius: 50%;
       background: linear-gradient(135deg, var(--teal), var(--blue));
-      color: var(--white); font-weight: 900; font-size: 1.1rem;
+      color: var(--white); font-weight: 900; font-size: 1.05rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .expander-text { flex: 1; min-width: 0; }
+    .expander-text h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .expander-text p { font-size: 0.85rem; color: var(--gray); margin: 0; line-height: 1.55; }
+    .expander-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--light); color: var(--teal);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
+      font-size: 1.2rem; font-weight: 700; transition: transform 0.3s;
+      flex-shrink: 0;
     }
-    .step-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .step-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
-    .step-arrow {
-      position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
-      color: var(--teal); font-size: 1.2rem; opacity: 0.5;
+    .step-expander[open] .expander-icon { transform: rotate(45deg); }
+    .step-details {
+      padding: 0 24px 22px 88px; font-size: 0.88rem; color: var(--gray);
     }
-    .step-card:last-child .step-arrow { display: none; }
+    .step-details ul { list-style: none; padding: 0; margin: 0; }
+    .step-details li {
+      padding: 7px 0 7px 22px; position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.04); line-height: 1.55;
+    }
+    .step-details li:last-child { border-bottom: none; }
+    .step-details li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      .step-details { padding-left: 24px; }
+    }
 
     /* ── SERVICES ── */
     .services-grid {
@@ -828,32 +851,87 @@
     <div style="text-align:center;">
       <div class="section-label reveal">Simple Process</div>
       <h2 class="section-title reveal">Four steps to your Malaysia company</h2>
-      <p class="section-sub" style="margin:0 auto 48px;">We guide you from the first conversation to a fully operational, SSM-compliant company — in your language, on your schedule.</p>
+      <p class="section-sub" style="margin:0 auto 40px;">Tap any step to see exactly what we handle — full scope, no surprises.</p>
     </div>
-    <div class="steps-grid">
-      <div class="step-card reveal">
-        <div class="step-num">1</div>
-        <h4>Free Consultation</h4>
-        <p>Tell us your business goals. We recommend the right entity type, share the timeline, and outline all costs clearly — no hidden fees.</p>
-        <div class="step-arrow">→</div>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">2</div>
-        <h4>SSM & Banking Registration</h4>
-        <p>We handle your SSM company registration and open your Malaysian corporate bank account. Fast, transparent, and fully managed.</p>
-        <div class="step-arrow">→</div>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">3</div>
-        <h4>Licensing & Work Visa</h4>
-        <p>We take care of business licences, work permits, and visa applications — so your team is ready to operate from day one.</p>
-        <div class="step-arrow">→</div>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">4</div>
-        <h4>Ongoing Support</h4>
-        <p>Accounting, payroll, audit, tax filing, annual compliance, and more — handled by the same team that set you up.</p>
-      </div>
+    <div style="max-width:780px; margin:0 auto;">
+      <details class="step-expander reveal">
+        <summary>
+          <div class="expander-num">1</div>
+          <div class="expander-text">
+            <h4>Free Consultation</h4>
+            <p>Tell us your business goals. We recommend the right entity type, share the timeline, and outline all costs clearly.</p>
+          </div>
+          <div class="expander-icon">+</div>
+        </summary>
+        <div class="step-details">
+          <ul>
+            <li>30-min WhatsApp or video call — in Malay, English, or Chinese</li>
+            <li>We advise the right entity (Sdn Bhd / LLP / Branch office) for your goals</li>
+            <li>Full cost breakdown — no hidden fees, no surprise charges</li>
+            <li>Realistic timeline estimate based on your situation</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="step-expander reveal reveal-delay-1">
+        <summary>
+          <div class="expander-num">2</div>
+          <div class="expander-text">
+            <h4>SSM & Banking Registration</h4>
+            <p>We handle your SSM company registration and open your Malaysian corporate bank account. Fast, transparent, fully managed.</p>
+          </div>
+          <div class="expander-icon">+</div>
+        </summary>
+        <div class="step-details">
+          <ul>
+            <li>Name reservation & availability search at SSM</li>
+            <li>Prepare incorporation docs (Form 9, M&amp;A, declarations)</li>
+            <li>SSM submission + e-Info registration on your behalf</li>
+            <li>Open corporate bank account (Maybank, CIMB, Public Bank, RHB, etc.)</li>
+            <li>Hand over all login credentials + first-month compliance checklist</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="step-expander reveal reveal-delay-2">
+        <summary>
+          <div class="expander-num">3</div>
+          <div class="expander-text">
+            <h4>Licensing & Work Visa</h4>
+            <p>We take care of business licences, work permits, and visa applications — so your team is ready to operate from day one.</p>
+          </div>
+          <div class="expander-icon">+</div>
+        </summary>
+        <div class="step-details">
+          <ul>
+            <li>Business premise licence and signboard permits</li>
+            <li>Work permit / Employment Pass applications for foreign staff</li>
+            <li>Visa processing for foreign directors and employees</li>
+            <li>Sector-specific licences (F&amp;B, education, professional services, etc.)</li>
+            <li>Ongoing renewal reminders before each licence expires</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="step-expander reveal reveal-delay-3">
+        <summary>
+          <div class="expander-num">4</div>
+          <div class="expander-text">
+            <h4>Ongoing Support</h4>
+            <p>Accounting, payroll, audit, tax filing, annual compliance — handled by the same team that set you up.</p>
+          </div>
+          <div class="expander-icon">+</div>
+        </summary>
+        <div class="step-details">
+          <ul>
+            <li>Annual Returns (AR) filed with SSM every year on time</li>
+            <li>Monthly bookkeeping &amp; financial statements</li>
+            <li>Tax filing — Form C/E / Form PT for companies &amp; directors</li>
+            <li>Beneficial Ownership (BO) reporting under the new Act</li>
+            <li>Audit coordination &amp; statutory compliance monitoring</li>
+          </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -875,7 +953,7 @@
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2;" class="svc-new-grid">
 
       <!-- Card 1: Company Secretarial -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(14,165,160,0.18)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(14,165,160,0.12),rgba(14,165,160,0.05));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;transition:all 0.3s;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="4" width="24" height="28" rx="3" stroke="#0EA5A0" stroke-width="2"/><line x1="11" y1="12" x2="25" y2="12" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="17" x2="25" y2="17" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="22" x2="19" y2="22" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/><circle cx="27" cy="27" r="7" fill="#C9A84C"/><path d="M24.5 27 L26 28.5 L29.5 25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -894,7 +972,7 @@
       </div>
 
       <!-- Card 2: Accounting & Tax -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(201,168,76,0.18)';this.querySelector('h3').style.color='#C9A84C';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';this.querySelector('h3').style.color='';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.05));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="28" height="20" rx="3" stroke="#C9A84C" stroke-width="2"/><line x1="4" y1="15" x2="32" y2="15" stroke="#C9A84C" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="28" stroke="#C9A84C" stroke-width="2"/><path d="M18 20 L18 24 L22 22" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="10" r="5" fill="#0EA5A0"/><text x="26" y="13" text-anchor="middle" font-size="6" fill="white" font-weight="700">RM</text></svg>
@@ -913,7 +991,7 @@
       </div>
 
       <!-- Card 3: Payroll -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(15,32,68,0.2)';this.querySelector('h3').style.color='#0F2044';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';this.querySelector('h3').style.color='';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(15,32,68,0.1),rgba(15,32,68,0.04));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="10" width="24" height="16" rx="3" stroke="#0F2044" stroke-width="2"/><line x1="6" y1="17" x2="30" y2="17" stroke="#0F2044" stroke-width="2"/><circle cx="12" cy="13.5" r="1.5" fill="#0EA5A0"/><circle cx="16" cy="13.5" r="1.5" fill="#C9A84C"/><path d="M10 22 L14 26 L26 14" stroke="#0EA5A0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -932,7 +1010,7 @@
       </div>
 
       <!-- Card 4: Audit & E-Invoice -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(14,165,160,0.18)';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(14,165,160,0.12),rgba(14,165,160,0.05));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="24" height="24" rx="4" stroke="#0EA5A0" stroke-width="2"/><path d="M12 18 L16 22 L24 14" stroke="#0EA5A0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="6" x2="16" y2="12" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="6" x2="20" y2="12" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/></svg>
@@ -951,7 +1029,7 @@
       </div>
 
       <!-- Card 5: Licensing & Immigration -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(14,165,160,0.18)';this.querySelector('h3').style.color='#0EA5A0';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';this.querySelector('h3').style.color='';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(14,165,160,0.1),rgba(14,165,160,0.04));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="8" y="12" width="20" height="14" rx="2" stroke="#0EA5A0" stroke-width="2"/><path d="M8 16 L18 22 L28 16" stroke="#0EA5A0" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="22" x2="18" y2="28" stroke="#0EA5A0" stroke-width="2"/><circle cx="18" cy="29" r="2" stroke="#C9A84C" stroke-width="1.5"/><path d="M23 8 L26 11 M26 8 L23 11" stroke="#0EA5A0" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -970,7 +1048,7 @@
       </div>
 
       <!-- Card 6: Legal & Advisory -->
-      <div class="svc-new-card">
+      <div class="svc-new-card reveal">
         <div style="background:white;border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(15,32,68,0.06);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);cursor:pointer;" onmouseover="this.style.transform='translateY(-10px)';this.style.boxShadow='0 20px 60px rgba(201,168,76,0.18)';this.querySelector('h3').style.color='#C9A84C';" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(15,32,68,0.06)';this.querySelector('h3').style.color='';">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.05));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 6 L26 10 L26 20 Q26 28 18 32 Q10 28 10 20 L10 10 Z" stroke="#C9A84C" stroke-width="2"/><line x1="10" y1="10" x2="26" y2="10" stroke="#C9A84C" stroke-width="2"/><line x1="18" y1="10" x2="18" y2="28" stroke="#C9A84C" stroke-width="2" stroke-dasharray="3 2"/><path d="M15 16 L18 19 L22 15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1234,7 +1312,7 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto;">
 
-      <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
+      <div class="testimonial-card tilt-card reveal" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
         <div style="font-size:1.6rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
         <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"BIJAK I helped me set up my Sdn Bhd in record time. Very responsive, no hidden charges, and they kept me updated at every step."</p>
         <div style="display:flex;align-items:center;gap:12px;">
@@ -1246,7 +1324,7 @@
         </div>
       </div>
 
-      <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
+      <div class="testimonial-card tilt-card reveal" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
         <div style="font-size:1.6rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
         <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"Professional team, fast response within an hour. They handled our company secretarial, payroll and tax filing smoothly. Everything we need in one place."</p>
         <div style="display:flex;align-items:center;gap:12px;">
@@ -1258,7 +1336,7 @@
         </div>
       </div>
 
-      <div class="testimonial-card tilt-card" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
+      <div class="testimonial-card tilt-card reveal" style="border-radius:20px;padding:28px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 24px rgba(15,32,68,0.06);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;">
         <div style="font-size:1.6rem;margin-bottom:12px;">⭐⭐⭐⭐⭐</div>
         <p style="color:var(--navy);font-style:italic;line-height:1.7;margin-bottom:16px;">"Service yang sangat memuaskan! Team BIJAK I sangat helpful, reply cepat, dan explain everything dengan jelas. Saya recommend!"</p>
         <div style="display:flex;align-items:center;gap:12px;">
@@ -1281,62 +1359,77 @@
       <p class="section-sub" style="margin:0 auto 48px;">Quick, honest answers to help you decide what's right for your business.</p>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           How do I know you're legitimate and not a scam?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>BIJAK I Advisory Sdn Bhd is a registered entity with the Companies Commission of Malaysia (SSM). Our SSM registration is <strong>202601031809(1693904-A)</strong> — you can verify this directly on the <a href="https://www.ssm.com.my" target="_blank" style="color:var(--teal);font-weight:600;">SSM e-Info portal</a>. We are not a middleman or agent — you work directly with our team from the first call to every filing after. We have over 300 client companies who can vouch for us, and we encourage you to ask us anything before deciding.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Can a foreigner fully own a company in Malaysia?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>Yes. In most industries, Malaysia allows 100% foreign ownership for Sdn Bhd companies — no local partner required. Some sectors (e.g., banking, defence, legal) have restrictions. Our team will advise on your specific industry within the first free consultation.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           How long does it take to incorporate a company in Malaysia?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>With complete documentation, SSM online incorporation is handled efficiently. Timeline depends on entity type and completeness of documents — we keep you updated at every milestone and work toward the fastest possible registration.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Do I need to travel to Malaysia to set up my company?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>No. The entire process can be completed remotely. We handle document submission, SSM correspondence, and can provide a digital copy of your incorporation certificate. For documents requiring notarisation in your home country, we guide you on the steps — usually a simple apostille or notarisation at your local Malaysian embassy.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           What documents do I need to incorporate a company?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>The basic requirements include: passport/IC copies of directors/shareholders, proof of residential address, proposed company name, and share capital details. For foreign nationals, additional documents may be needed depending on your country of origin. We provide a tailored checklist during our first consultation.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           Why do I need a company secretary in Malaysia?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>The Companies Act 2016 requires every Malaysian company to have at least one qualified company secretary who is a Malaysian citizen or permanent resident. The company secretary ensures your company stays compliant with SSM, files annual returns on time, maintains proper statutory records, and advises the board on governance matters. BIJAK I provides licensed company secretaries for all our clients as part of our ongoing service.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           What is the difference between Sdn Bhd and LLP?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>An Sdn Bhd (Sendirian Berhad) is a private limited company with shareholders whose liability is limited to their share capital. An LLP (Limited Liability Partnership) is a partnership structure where partners have limited liability but with more flexibility in management. LLPs are popular for professional services firms. Sdn Bhd is generally preferred for trading, investment, and operational businesses.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item reveal">
         <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
           How much does it cost to set up and maintain a company in Malaysia?
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer"><p>Incorporation costs vary based on entity type and complexity. BIJAK I offers transparent fixed-fee packages — no hidden charges. Annual maintenance costs (company secretary, accounting, tax filing) vary based on transaction volume and business complexity. We share full pricing upfront before any engagement begins. <a href="#contact" style="color:var(--teal);font-weight:600;">Contact us</a> for a tailored quote.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- HEALTH CHECK EMBED -->
+  <section class="section reveal" id="health-check" style="background:var(--light); padding-top:64px; padding-bottom:64px;">
+    <div style="text-align:center; max-width:700px; margin:0 auto 32px;">
+      <div class="section-label" style="color:var(--teal);">Free Tool</div>
+      <h2 class="section-title" style="margin-bottom:14px;">Check your company's compliance health</h2>
+      <p style="font-size:1rem; color:var(--gray); margin:0 auto; line-height:1.7;">Take our free 8-question health check — find out if your SSM, LHDN, and BO filings are at risk. <strong>2 minutes. No data stored.</strong></p>
+    </div>
+    <div style="max-width:520px; margin:0 auto; background:white; border-radius:20px; box-shadow:0 8px 40px rgba(15,32,68,0.12); overflow:hidden; border:1px solid var(--border);">
+      <iframe src="/health-check.html" style="width:100%; height:820px; border:none; display:block;" title="Syarikat Health Check — BIJAK I Advisory" loading="lazy"></iframe>
+    </div>
+    <div style="text-align:center; margin-top:18px; font-size:0.82rem; color:var(--gray);">
+      Prefer the full-page view? <a href="/health-check.html" target="_blank" rel="noopener" style="color:var(--teal); font-weight:600;">Open in new tab →</a>
     </div>
   </section>
 
@@ -1689,6 +1782,19 @@
       });
     })();
 
+  </script>
+
+  <!-- Tawk.to Live Chat — REPLACE Tawk.to Property ID below with the one from your tawk.to dashboard (free signup at https://www.tawk.to) -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/REPLACE_TAWK_PROPERTY_ID/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
   </script>
 </body>
 </html>
