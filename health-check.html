@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syarikat Health Check PERCUMA — BIJAK I Advisory</title>
+<meta name="description" content="Semak risiko pematuhan syarikat anda dengan SSM & LHDN — PERCUMA dalam 2 minit. Tahu apa yang berhutang sebelum surat saman sampai." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --navy:#0F2044; --blue:#1A4A8A; --teal:#0EA5A0; --gold:#C9A84C;
+    --light:#F4F7FB; --gray:#6B7280; --border:#E2E8F0; --red:#EF4444;
+  }
+  body{font-family:'Inter',sans-serif;background:var(--light);color:var(--navy);line-height:1.55;min-height:100vh}
+
+  .wrap{max-width:480px;margin:0 auto;padding:16px 16px 40px}
+
+  /* HEADER */
+  .head{background:linear-gradient(150deg,var(--navy) 0%,var(--blue) 70%,var(--teal) 130%);border-radius:0 0 20px 20px;padding:28px 22px 24px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .head::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(201,168,76,0.12);top:-80px;right:-70px}
+  .head::after{content:'';position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(14,165,160,0.15);bottom:-60px;left:-50px}
+  .brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px;position:relative}
+  .brand svg{width:34px;height:34px}
+  .brand .bn{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;letter-spacing:2px}
+  .brand .bs{font-size:9px;color:var(--teal);letter-spacing:3px;font-weight:700;margin-top:2px}
+  .badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 14px;border-radius:100px;margin-bottom:14px;position:relative}
+  .badge b{color:var(--gold)}
+  h1{font-family:'Playfair Display',serif;font-size:26px;line-height:1.2;margin-bottom:10px;position:relative}
+  h1 em{font-style:normal;color:var(--gold)}
+  .head p{font-size:13.5px;color:rgba(255,255,255,0.8);max-width:360px;margin:0 auto;position:relative}
+  .head .meta{display:flex;justify-content:center;gap:14px;margin-top:16px;position:relative}
+  .head .meta span{font-size:11px;color:rgba(255,255,255,0.65);font-weight:600}
+  .head .meta b{color:var(--gold)}
+
+  /* CARD */
+  .card{background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(15,32,68,0.1);padding:22px 20px;margin-top:18px}
+
+  /* PROGRESS */
+  .prog{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .prog-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+  .prog-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));width:0%;transition:width .4s ease;border-radius:3px}
+  .prog-num{font-size:11px;font-weight:800;color:var(--gray);letter-spacing:1px;white-space:nowrap}
+
+  .q-label{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--teal);text-transform:uppercase;margin-bottom:6px}
+  h2{font-size:18px;font-weight:800;margin-bottom:16px;line-height:1.3}
+  .q-hint{font-size:12.5px;color:var(--gray);margin:-10px 0 14px}
+
+  .opt{display:block;width:100%;text-align:left;background:var(--light);border:2px solid var(--border);border-radius:12px;padding:13px 15px;margin-bottom:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:var(--navy);transition:all .2s}
+  .opt small{display:block;font-size:11.5px;color:var(--gray);font-weight:500;margin-top:2px}
+  .opt:hover{border-color:var(--teal);background:#E6F7F7}
+  .opt.sel{border-color:var(--teal);background:#E6F7F7;box-shadow:0 2px 10px rgba(14,165,160,0.15)}
+  .opt.sel::after{content:'✓';float:right;color:var(--teal);font-weight:900}
+
+  .nav{display:flex;gap:10px;margin-top:16px}
+  .btn{flex:1;padding:14px;border-radius:11px;border:none;font-family:'Inter',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s}
+  .btn-back{background:transparent;color:var(--gray);flex:0 0 90px}
+  .btn-back:hover{color:var(--navy)}
+  .btn-main{background:var(--teal);color:#fff}
+  .btn-main:hover{background:#0b9090;transform:translateY(-1px)}
+  .btn-main:disabled{background:#b9c4cc;cursor:not-allowed;transform:none}
+
+  /* RESULT */
+  .res-score{display:flex;align-items:center;gap:16px;padding:18px;border-radius:14px;margin-bottom:16px}
+  .res-ok{background:#E6F7F7;border:1px solid rgba(14,165,160,0.4)}
+  .res-warn{background:#FEF3C7;border:1px solid rgba(245,158,11,0.4)}
+  .res-danger{background:#FEE2E2;border:1px solid rgba(239,68,68,0.4)}
+  .res-score{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#fff;flex-shrink:0}
+  .sc-ok{background:var(--teal)}
+  .sc-warn{background:#F59E0B}
+  .sc-danger{background:var(--red)}
+  .res-verdict{font-size:15px;font-weight:800;margin-bottom:3px}
+  .res-sub{font-size:12.5px;color:var(--gray);line-height:1.45}
+
+  .exposure{background:var(--navy);color:#fff;border-radius:14px;padding:18px;margin-bottom:16px}
+  .exposure h3{font-size:13px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+  .exp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.09)}
+  .exp-row:last-child{border-bottom:none}
+  .exp-what{font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.85)}
+  .exp-what small{display:block;font-size:11px;color:rgba(255,255,255,0.5);font-weight:400;margin-top:1px}
+  .exp-risk{font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+  .r-high{background:rgba(239,68,68,0.25);color:#FCA5A5;border:1px solid rgba(239,68,68,0.5)}
+  .r-med{background:rgba(245,158,11,0.25);color:#FCD34D;border:1px solid rgba(245,158,11,0.5)}
+  .r-low{background:rgba(14,165,160,0.25);color:#7EE0DE;border:1px solid rgba(14,165,160,0.5)}
+  .exp-total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:2px solid rgba(201,168,76,0.4)}
+  .exp-total .lbl{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px}
+  .exp-total .val{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--gold)}
+
+  .rec{border:2px solid var(--teal);border-radius:14px;padding:16px;margin-bottom:16px;background:#fff}
+  .rec-tag{display:inline-block;background:var(--teal);color:#fff;font-size:10px;font-weight:800;letter-spacing:1.5px;padding:4px 12px;border-radius:100px;margin-bottom:8px}
+  .rec-title{font-size:16px;font-weight:800;margin-bottom:6px}
+  .rec-desc{font-size:12.5px;color:var(--gray);line-height:1.5;margin-bottom:12px}
+  .rec-alt{font-size:11.5px;color:var(--gray);background:var(--light);border-radius:8px;padding:9px 12px}
+  .rec-alt b{color:var(--navy)}
+
+  .cta-wa{display:block;width:100%;background:#25D366;color:#fff;text-align:center;padding:16px;border-radius:12px;font-size:15.5px;font-weight:800;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:all .2s}
+  .cta-wa:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,211,102,0.4)}
+  .cta-note{text-align:center;font-size:11px;color:var(--gray);margin-top:10px}
+  .fineprint{font-size:10.5px;color:var(--gray);text-align:center;margin-top:18px;line-height:1.5;padding:0 8px}
+
+  /* FOOTER BRAND */
+  .foot{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;opacity:.7}
+  .foot svg{width:22px;height:22px}
+  .foot .fb{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--navy)}
+  .foot .fs{font-size:8px;color:var(--teal);letter-spacing:2px;font-weight:700}
+
+  @media(max-width:380px){h1{font-size:22px}h2{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="brand">
+      <svg viewBox="0 0 80 80"><path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 62 L70 54 L64 66" fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="bn">BIJAK I</div><div class="bs">ADVISORY</div></div>
+    </div>
+    <div class="badge">SEMAKAN <b>PERCUMA</b> · 2 MINIT</div>
+    <h1>Adakah syarikat anda<br><em>hutang</em> kepada SSM/LHDN?</h1>
+    <p>Jawab 8 soalan — dapatkan skor risiko pematuhan &amp; anggaran pendedahan penalti syarikat anda, serta-merta.</p>
+    <div class="meta"><span>⏱ <b>2 minit</b></span><span>🔒 <b>Tiada data disimpan</b></span><span>💯 <b>PERCUMA</b></span></div>
+  </div>
+
+  <div class="card" id="quiz">
+    <div class="prog" id="prog" style="display:none">
+      <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+      <div class="prog-num" id="progNum">1 / 8</div>
+    </div>
+    <div id="qBody"></div>
+    <div class="nav" id="navRow">
+      <button class="btn btn-back" id="btnBack" style="display:none" onclick="goBack()">← Kembali</button>
+      <button class="btn btn-main" id="btnNext" onclick="goNext()" disabled>Pilih jawapan ↓</button>
+    </div>
+  </div>
+
+  <div class="foot">
+    <svg viewBox="0 0 80 80"><path d="M20 65 L20 15 Q20 10 26 10 L42 10 Q58 10 58 28 Q58 42 44 45 L42 46 Q58 48 58 62 Q58 75 42 75 L26 75" fill="none" stroke="#0F2044" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 62 L70 54 L64 66" fill="none" stroke="#C9A84C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div><div class="fb">BIJAK I ADVISORY</div><div class="fs" style="text-align:center">SSM 202601031809</div></div>
+  </div>
+</div>
+
+<script>
+// ====== EDIT HERE: WhatsApp number (country code, no + or dashes) ======
+var WA_NUMBER = "60123828827";
+// ======================================================================
+
+var Q = [
+ {q:"Berapa lama syarikat anda berdaftar dengan SSM?",hint:"Tahun penubuhan syarikat",
+  opts:[{t:"Kurang 1 tahun",v:0},{t:"1–3 tahun",v:1},{t:"4–7 tahun",v:2},{t:"8 tahun ke atas",v:3}]},
+ {q:"Bilakah Annual Return (AR) terakhir difailkan?",hint:"Pemfailan tahunan wajib kepada SSM",
+  opts:[{t:"Tahun ini / tahun lepas",v:0},{t:"2 tahun lalu",v:2},{t:"3+ tahun lalu",v:4},{t:"Tak pernah / tak pasti",v:5}]},
+ {q:"Bagaimana status pemfailan cukai dengan LHDN?",hint:"Form C / Form E tahunan",
+  opts:[{t:"Kemas — semua difailkan",v:0},{t:"Ada tahun tertinggal",v:3},{t:"Bertahun tak fail",v:5},{t:"Tak pasti",v:3}]},
+ {q:"Adakah syarikat masih ada transaksi perniagaan aktif?",hint:"Jualan, pembelian, operasi sebenar",
+  opts:[{t:"Ya, aktif beroperasi",v:0},{t:"Tidak — dormant / terbengkalai",v:3},{t:"Berhenti sejak MCO/masalah lain",v:4},{t:"Baru nak mula semula",v:1}]},
+ {q:"Adakah syarikat pernah terima surat amaran / kompaun dari SSM atau LHDN?",hint:"Surat kuning, merah, notis 14 hari, dsb.",
+  opts:[{t:"Tiada langsung",v:0},{t:"Ada — tapi tak dihiraukan",v:4},{t:"Ada — dah bayar kompaun dulu",v:1},{t:"Tak pasti / surat hilang",v:2}]},
+ {q:"Siapa yang menguruskan rekod syarikat sekarang?",hint:"Setiausaha syarikat / akaun",
+  opts:[{t:" Firma sekretarial tetap",v:0},{t:"Akaunan / pengurus dalaman",v:1},{t:"Saya sendiri (boss)",v:2},{t:"Takde siapa — terbengkalai",v:5}]},
+ {q:"Adakah Beneficial Ownership (BO) pernah difailkan?",hint:"Pemfailan BO wajib sejak 2024",
+  opts:[{t:"Ya, sudah difailkan",v:0},{t:"Tak pernah dengar pun",v:4},{t:"Ada buat dulu, tak pasti status",v:2},{t:"Syarikat dormant, rasa tak perlu",v:3}]},
+ {q:"Apa matlamat anda dengan syarikat ini sekarang?",hint:"Kami sesuaikan nasihat ikut jawapan ini",
+  opts:[{t:"Sambung operasi & kemas rekod",v:1},{t:"Tutup / strike off syarikat",v:2},{t:"Aktifkan semula untuk projek baru",v:2},{t:"Tak pasti — ikut nasihat",v:0}]}
+];
+
+var cur=0, ans=[], score=0, maxScore=0;
+Q.forEach(function(q){ maxScore+=Math.max.apply(null,q.opts.map(function(o){return o.v;})); });
+
+function render(){
+  var body=document.getElementById('qBody');
+  var q=Q[cur];
+  document.getElementById('prog').style.display='flex';
+  document.getElementById('progFill').style.width=(cur/Q.length*100)+'%';
+  document.getElementById('progNum').textContent=(cur+1)+' / '+Q.length;
+  var html='<div class="q-label">Soalan '+(cur+1)+' dari '+Q.length+'</div><h2>'+q.q+'</h2>';
+  if(q.hint) html+='<div class="q-hint">'+q.hint+'</div>';
+  q.opts.forEach(function(o,i){
+    html+='<button class="opt'+(ans[cur]===i?' sel':'')+'" onclick="pick('+i+')">'+o.t+'</button>';
+  });
+  body.innerHTML=html;
+  var btn=document.getElementById('btnNext');
+  btn.disabled=(ans[cur]===undefined);
+  btn.textContent=(cur===Q.length-1)?'Lihat Keputusan →':'Seterusnya →';
+  document.getElementById('btnBack').style.display=cur>0?'block':'none';
+}
+
+function pick(i){ ans[cur]=i; render(); }
+
+function goNext(){
+  if(ans[cur]===undefined) return;
+  if(cur<Q.length-1){ cur++; render(); }
+  else showResult();
+}
+function goBack(){ if(cur>0){ cur--; render(); } }
+
+function verdict(scorePct){
+  if(scorePct<25) return {cls:'res-ok',sc:'sc-ok',emoji:'✓',title:'Syarikat anda DIKEMAS',
+    sub:'Risiko rendah. Kekalkan pematuhan tahunan — kami boleh pastikan ia kekal begini tiap-tiap tahun.'};
+  if(scorePct<55) return {cls:'res-warn',sc:'sc-warn',emoji:'!',title:'ADA RISIKO — PERLU SEMAKAN',
+    sub:'Ada pemfailan yang mungkin tertinggal. Bagus anda semak sekarang — sebelum ia jadi kompaun.'};
+  return {cls:'res-danger',sc:'sc-danger',emoji:'!!',title:'RISIKO TINGGI — TINDAKAN SEGERA',
+    sub:'Syarikat anda berisiko kompaun besar & pengarah disekat. Jangan tunggu surat seterusnya sampai.'};
+}
+
+function riskOf(v){ return v>=4?'HIGH':(v>=2?'MEDIUM':'LOW'); }
+function riskHtml(r){ return r==='HIGH'?'r-high':(r==='MEDIUM'?'r-med':'r-low'); }
+
+function showResult(){
+  score=0;
+  Q.forEach(function(q,i){ score+=q.opts[ans[i]].v; });
+  var pct=Math.round(score/maxScore*100);
+  var v=verdict(pct);
+
+  // exposure rows from answers 2 (AR), 3 (tax), 5 (letters), 7 (BO)
+  var rows=[];
+  var ar=ans[1], tax=ans[2], letters=ans[4], bo=ans[6], goal=ans[7];
+  if(ar>=2) rows.push({w:'Annual Return tertunggak',s:'Kompaun sehingga RM50,000 + tertunggak setiap tahun',r:riskOf(ar)});
+  if(tax>=3) rows.push({w:'Cukai / Form E tertunggak',s:'Penalti LHDN + halangan pelepasan syarikat',r:riskOf(tax)});
+  if(letters>=2) rows.push({w:'Surat amaran tidak dihiraukan',s:'Notis seterusnya = tindakan mahkamah / penghapusan',r:riskOf(letters+1)});
+  if(bo>=2) rows.push({w:'Beneficial Ownership tak difailkan',s:'Pemfailan wajib — denda bawah Akta baru',r:riskOf(bo)});
+  if(rows.length===0) rows.push({w:'Tiada tunggakan dikesan',s:'Jawapan anda menunjukkan pematuhan baik',r:'LOW'});
+
+  // recommendation — goal: 0=sambung operasi, 1=tutup/strike off, 2=aktifkan semula, 3=tak pasti
+  var rowsCount = rows.filter(function(r){return r.r!=='LOW';}).length;
+  var rec, recDesc, alt;
+  if(goal===1||goal===2){
+    rec='Pembersihan Penalti & Tunggakan dahulu';
+    recDesc='Sebelum tutup atau aktifkan semula — tunggakan mesti dikemas dulu (kalau tidak, proses tersekat). Semakan pendedahan PERCUMA, quote tetap bertulis.';
+    alt='Selepas bersih: pilih Strike-Off RM1,800 (tutup) atau Reactivation +RM1,099 (aktif semula).';
+  } else if(goal===0||pct<25){
+    rec='Pakej Kepatuhan PKS (Combo)';
+    recDesc='Buku, cukai, sekretariat & pemantauan tarikh statutory — satu bil bulanan dari RM680. Syarikat kekal kemas, anda tak perlu fikir.';
+    alt='Alternatif: Dormant Keep-Alive RM999/tahun jika syarikat tak aktif beroperasi.';
+  } else if(pct>=55 && rowsCount>0){
+    rec='Pembersihan Penalti & Tunggakan dahulu';
+    recDesc='Skor risiko tinggi = ada tunggakan serius. Kemas dulu, baru pilih: teruskan operasi atau tutup. Semakan pendedahan PERCUMA, quote tetap bertulis.';
+    alt='Selepas bersih: Combo dari RM680/bln (operasi) atau Strike-Off RM1,800 (tutup).';
+  } else {
+    rec='Dormant Keep-Alive — RM999/tahun';
+    recDesc='Syarikat anda tidak aktif & risiko sederhana. Pakej 12 bulan: AR difailkan tepat masa, nil-return LHDN, BO, alamat berdaftar — elak kompaun RM50,000.';
+    alt='Jika mahu sambung operasi: Pakej Kepatuhan PKS (Combo) dari RM680/bln.';
+  }
+
+  // WA message
+  var wa=[
+    'Hai BIJAK I, saya baru buat Health Check:',
+    '• Skor risiko: '+pct+'/100 ('+v.title+')',
+    '• Dikecapi:'+(rows.length?(' '+rows.length+' isu'):' tiada isu besar'),
+    '• Matlamat: '+Q[7].opts[goal].t,
+    'Boleh semak situasi sebenar syarikat saya?'
+  ].join('\n');
+  var waUrl='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(wa);
+
+  var rowsHtml=rows.map(function(r){
+    return '<div class="exp-row"><div class="exp-what">'+r.w+'<small>'+r.s+'</small></div><div class="exp-risk '+riskHtml(r.r)+'">'+r.r+'</div></div>';
+  }).join('');
+
+  document.getElementById('quiz').innerHTML=
+    '<div class="res-score '+v.sc+'">'+pct+'</div>'.replace('<div class="res-score','<div class="res-score')+
+    '<div class="res '+v.cls+'" style="display:flex;align-items:center;gap:16px;padding:18px;border-radius:14px;margin-bottom:16px">'+
+      '<div class="res-score '+v.sc+'">'+pct+'</div>'+
+      '<div><div class="res-verdict">'+v.emoji+' '+v.title+'</div><div class="res-sub">'+v.sub+'</div></div>'+
+    '</div>'+
+    '<div class="exposure"><h3>Pendedahan Yang Kami Kenalpasti</h3>'+rowsHtml+
+      '<div class="exp-total"><div class="lbl">ESTIMASI RISIKO</div><div class="val">'+pct+'/100</div></div></div>'+
+    '<div class="rec"><div class="rec-tag">CADANGAN UNTUK ANDA</div><div class="rec-title">'+rec+'</div>'+
+      '<div class="rec-desc">'+recDesc+'</div>'+
+      '<div class="rec-alt"><b>Seterusnya:</b> '+alt+'</div></div>'+
+    '<a class="cta-wa" href="'+waUrl+'" target="_blank" rel="noopener">📱 Semak Sebenar via WhatsApp — PERCUMA</a>'+
+    '<div class="cta-note">Balasan dalam 1 jam waktu bekerja · Tiada obligasi</div>'+
+    '<div class="fineprint">Anggaran berdasarkan jawapan anda sahaja — bukan nasihat undang-undang. Semakan WhatsApp akan sahkan status sebenar dari rekod SSM/LHDN. Tiada data dari semakan ini disimpan oleh kami.</div>';
+
+  document.getElementById('navRow').style.display='none';
+  document.getElementById('progFill').style.width='100%';
+}
+
+render();
+</script>
+</body>
+</html>
